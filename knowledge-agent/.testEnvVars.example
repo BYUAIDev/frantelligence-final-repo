@@ -1,0 +1,59 @@
+# .testEnvVars.example — Knowledge Builder Agent test credentials template
+#
+# COPY THIS FILE to .testEnvVars and fill in real values before running tests.
+# The actual .testEnvVars file is GITIGNORED — never commit it.
+#
+# Usage (Unix / Git Bash):
+#   source knowledge-agent/.testEnvVars && node knowledge-agent/scripts/test.js
+#
+# Usage (PowerShell — set vars manually or use a wrapper):
+#   $env:SUPABASE_URL = "https://your-project.supabase.co"
+#   node knowledge-agent/scripts/test.js
+#
+# Log level reference: debug | info | warning | error
+
+# ---------------------------------------------------------------------------
+# Supabase — required for all database integration tests
+# ---------------------------------------------------------------------------
+export SUPABASE_URL="https://your-project-id.supabase.co"
+export SUPABASE_SERVICE_ROLE_KEY="your-service-role-key-here"
+export SUPABASE_ANON_KEY="your-anon-key-here"
+
+# ---------------------------------------------------------------------------
+# OpenRouter — required for LLM generation tests (Claude Sonnet 4.5)
+# ---------------------------------------------------------------------------
+export OPENROUTER_API_KEY="sk-or-your-key-here"
+
+# ---------------------------------------------------------------------------
+# LangFuse — optional for local testing; required for observability tests
+# ---------------------------------------------------------------------------
+export LANGFUSE_PUBLIC_KEY="pk-lf-your-key-here"
+export LANGFUSE_SECRET_KEY="sk-lf-your-key-here"
+export LANGFUSE_HOST="https://cloud.langfuse.com"
+
+# ---------------------------------------------------------------------------
+# Resend — required for email delivery tests
+# ---------------------------------------------------------------------------
+export RESEND_API_KEY="re_your-key-here"
+
+# ---------------------------------------------------------------------------
+# App configuration
+# ---------------------------------------------------------------------------
+export ENVIRONMENT="test"
+export LOG_LEVEL="debug"
+export CORS_ORIGINS="http://localhost:5173"
+
+# ---------------------------------------------------------------------------
+# Knowledge Builder Agent — test fixtures
+# ---------------------------------------------------------------------------
+# UUID of a test company in your Supabase test database
+export KB_TEST_COMPANY_ID="00000000-0000-0000-0000-000000000001"
+
+# Minimum severity score before a gap triggers generation
+export KB_SEVERITY_THRESHOLD="15"
+
+# Maximum gaps to process in a single orchestrator run
+export KB_MAX_GAPS_PER_RUN="3"
+
+# Feature flag — must be "true" to enable KB Agent endpoints
+export VITE_FEATURE_KNOWLEDGE_BUILDER="true"

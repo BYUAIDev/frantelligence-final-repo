@@ -1,0 +1,209 @@
+Remaining Midterm To-Do List
+Listed by priority. Tasks 1–6 are the most important for rubric coverage. Tasks 7–9 are the code floor Casey needs to see. Task 10 you do yourself.
+Task 1 — Falsification Test
+Rubric: Jason — Problem Identification (20 pts) | Effort: 20 min
+Save to: knowledge-agent/midterm/falsification-test.md
+Prompt to paste into Claude/ChatGPT:
+> I am a BYU MISM student building the Knowledge Builder Agent for a franchise operations SaaS platform called Frantelligence. For my midterm I need a Falsification Test document. The rubric requires: "Falsifiability check performed" under the Problem Identification grading area.
+>
+> Here is what the product does: It monitors franchise support chat conversations, detects knowledge gaps (questions that go unanswered), generates documentation drafts in the company's writing style, and sends them to the franchisor admin for one-click approval and publishing to the knowledge base.
+>
+> Our problem statement: Franchisors spend ~12 hours/month writing documentation, they only learn about knowledge gaps when franchisees complain, and same questions get asked repeatedly before any action is taken.
+>
+> Please write a falsification-test.md document (markdown format) that:
+> 1. Lists each core belief/assumption we are building on (at least 5: about customer pain, willingness to approve AI-generated docs, frequency/severity of the gap problem, competitive differentiation, and ROI claim of 12 hrs/month)
+> 2. For each assumption: states it clearly, explains what evidence would falsify it (make it false), and what we actually checked / found so far to validate or refute it
+> 3. Ends with a section "What Would Kill This Project" — three specific scenarios where we would stop and pivot
+> 4. Stays under 400 words total — clear, professional, direct
+>
+> Format as clean markdown with a table or structured sections. Do not be vague — each falsification test should be specific and testable.
+Task 2 — Differentiation Grid Document
+Rubric: Jason — Customer Focus (20 pts) | Effort: 15 min
+Save to: knowledge-agent/midterm/differentiation.md
+Prompt to paste into Claude/ChatGPT:
+> I need a 2x2 Differentiation Grid document for my midterm. I already have a hand-drawn whiteboard photo of it. I need a clean markdown document that explains and formalizes it.
+>
+> The grid axes are:
+> - Y-axis: Siloed (bottom) → Integrated (top) — meaning how integrated the AI/documentation system is with the franchisor's actual chat data and knowledge base
+> - X-axis: Manual (left) → Automatic (right) — meaning how much human effort is required to create and maintain documentation
+>
+> The four quadrants and where competitors sit:
+> - Top-Left (Integrated + Manual): FranConnect — the 800-lb gorilla. They provide integrated document repositories but require completely manual documentation work.
+> - Bottom-Right (Siloed + Automatic): Generic AI tools — Notion AI, Palmtree, shared ChatGPT Enterprise. They can auto-generate text but are siloed from the franchise system's actual conversation data.
+> - Bottom-Left (Siloed + Manual): Legacy solutions — binders, static wikis, email chains. No AI, not integrated.
+> - Top-Right (Integrated + Automatic) — Our position: Knowledge Builder Agent. Automatically detects gaps from real conversation data AND generates documentation. No other competitor occupies this quadrant.
+>
+> Please write a differentiation.md markdown document that:
+> 1. Opens with a one-paragraph explanation of why these two axes were chosen (what they reveal about the problem space)
+> 2. Includes an ASCII or markdown-formatted 2x2 grid showing competitor placement
+> 3. Has a section for each quadrant explaining who lives there and why
+> 4. Ends with 2–3 sentences on why the top-right quadrant (our position) represents a genuine strategic gap and not just marketing
+>
+> Keep it under 500 words. Professional tone, suitable for presenting to C-suite executives.
+Task 3 — Failure Definition & Pivot Plans
+Rubric: Jason — Success & Failure Planning (20 pts) | Effort: 15 min
+Save to: knowledge-agent/midterm/failure-and-pivot.md
+Prompt to paste into Claude/ChatGPT:
+> For my BYU MISM midterm I need a Failure Definition and Pivot Plan document for the Knowledge Builder Agent. The rubric requires: "Failure defined" and "Pivot plans documented."
+>
+> Context: The Knowledge Builder Agent monitors franchise chat conversations, detects unanswered questions (knowledge gaps), generates documentation drafts using AI, and sends them to the franchisor admin for one-click approval and publishing.
+>
+> Our success metrics (already defined):
+> - 60% of franchisor admins use the feature monthly
+> - 50% of generated documents are approved
+> - 25% reduction in repeat questions after a doc is published
+> - 12 hours/month saved per customer
+>
+> Please write a failure-and-pivot.md markdown document that:
+> 1. Failure Definition — defines what failure looks like in concrete, measurable terms. Not vague. E.g., "If after 90 days of launch, approval rate is below X% AND repeat question reduction is below Y%, the feature has failed." At least 3 specific failure thresholds tied to the success metrics above.
+> 2. Early Warning Signals — 3–4 leading indicators that would warn us failure is coming before the 90-day mark (e.g., email open rate, first-approval rate in week 1, etc.)
+> 3. Pivot Options — three documented pivot paths with a one-paragraph description of each:
+> - Pivot A: If admins won't approve AI-generated docs (trust problem)
+> - Pivot B: If gap detection is noisy / inaccurate (technical problem)
+> - Pivot C: If the problem is real but franchisors won't pay for it (market problem)
+> 4. Decision Timeline — a simple table showing what decision gets made at what time (e.g., Day 30: review early warnings, Day 90: go/no-go on each metric)
+>
+> Max 500 words. Professional and direct. Markdown format.
+Task 4 — Customer Research Summary
+Rubric: Jason — Customer Interaction (20 pts) | Effort: 20 min
+Save to: knowledge-agent/midterm/customer-research.md
+Prompt to paste into Claude/ChatGPT:
+> I need a Customer Research Summary document for my midterm. The rubric requires: "Evidence of engaging with real customers, feedback influencing iteration, awareness of customer influence direction."
+>
+> I am building the Knowledge Builder Agent for franchise operations SaaS. My target customer is a franchisor admin (corporate franchise operator) with 20–100 franchise locations who currently spends significant time writing and maintaining documentation.
+>
+> I need you to write a customer-research.md template/starter document that:
+> 1. Has a section for "Research Methods" — what types of customer conversations count as evidence (interviews, support ticket analysis, surveys, beta conversations). Even informal conversations with potential customers count.
+> 2. Has a "Customer Insights" section with the key pain points we validated:
+> - Documentation is a time sink (cite the 12 hrs/month estimate and where it came from)
+> - Franchisors learn about gaps reactively, not proactively
+> - Same questions keep getting asked before anyone writes an answer
+> - Support teams are overwhelmed with repetitive questions
+> 3. Has an "Influence on Product Decisions" section — showing 3 specific ways customer feedback shaped the design (e.g., why we chose one-click approval over batch review, why we made the email a digest not an action-from-email flow, why we added the "update existing doc" path alongside "create new doc")
+> 4. Has a "What We Still Need to Learn" section — 3–4 open questions we need to answer with real customers before launch
+>
+> Write this as a real, grounded document — not fluffy. Markdown format. Under 600 words.
+Task 5 — Roadmap Checkboxes Update
+Rubric: Casey — Phase-by-Phase Implementation (25 pts) | Effort: 10 min
+Prompt to paste into Claude/ChatGPT (give it the actual roadmap file contents):
+> I have four roadmap files for the Knowledge Builder Agent. I need you to review them and check off all tasks that represent documentation and planning work that is already done. Do NOT check off implementation tasks (code, database, frontend) since those haven't been built yet.
+>
+> Rules for checking off:
+> - Check [x] for: PRD written, context.md created, coding-style.md created, changelog maintained, roadmaps created, .cursorrules created, .testEnvVars.example created, CLI scripts created (test.js, build.js, run.sh), structured logging module created (kb_logging.py), git repo initialized
+> - Leave [ ] for: any code implementation, database migrations, frontend components, edge functions, actual tests running
+>
+> [PASTE THE CONTENTS OF EACH ROADMAP FILE HERE]
+>
+> Return the updated versions of all four files with appropriate checkboxes checked. Keep all other content exactly the same.
+Task 6 — Phase 1 Service Stubs (Minimal Code Floor)
+Rubric: Casey — Phase-by-Phase Implementation (25 pts) | Effort: 30 min
+Save to: ai-backend/app/services/gap_detection.py, style_extraction.py, document_generation.py, kb_orchestrator.py
+Prompt to paste into Claude/ChatGPT:
+> I am building the Knowledge Builder Agent for a franchise SaaS platform. I need Phase 1 service stub files — these are NOT full implementations. They are properly structured Python class scaffolds that:
+> - Show the class exists and follows the architecture
+> - Have all method signatures with correct type hints
+> - Have docstrings on every class and method
+> - Use structured logging from app.kb_logging (from app.kb_logging import get_logger, log_entry, log_exit, log_error)
+> - Raise NotImplementedError in method bodies (so tests go red — this is TDD Phase 1: RED)
+> - Import the correct Pydantic models
+>
+> The tech stack: Python 3.11, FastAPI, Supabase Python client, structlog for logging, LangFuse for observability (from langfuse.decorators import observe).
+>
+> Create four files:
+>
+> 1. gap_detection.py — Class GapDetectionService with methods:
+> - async def detect_gaps(self, company_id: str, days: int = 30, min_severity: int = 15) -> list[KnowledgeGap]
+> - async def calculate_severity(self, question_count: int, unique_users: int, trend: str) -> int
+> - async def cluster_questions(self, questions: list[str]) -> dict[str, list[str]]
+>
+> 2. style_extraction.py — Class StyleExtractionService with methods:
+> - async def extract_style_profile(self, company_id: str) -> StyleProfile
+> - async def get_sample_documents(self, company_id: str, count: int = 3) -> list[dict]
+>
+> 3. document_generation.py — Class DocumentGenerationService with methods:
+> - async def generate_document(self, gap: KnowledgeGap, style: StyleProfile) -> GeneratedDocument
+> - async def gather_context(self, gap: KnowledgeGap) -> dict
+> - async def validate_quality(self, content: str) -> bool
+>
+> 4. kb_orchestrator.py — Class KnowledgeBuilderOrchestrator with methods:
+> - async def run_for_gap(self, company_id: str, gap_id: str) -> GeneratedDocument
+> - async def process_approval(self, token: str) -> dict
+> - async def process_dismissal(self, token: str, reason: str) -> dict
+>
+> Also create ai-backend/app/models/knowledge_builder.py with Pydantic models for KnowledgeGap, StyleProfile, GeneratedDocument (basic fields only — match what the service methods use).
+>
+> Every method body should be exactly: raise NotImplementedError("Phase 1 implementation pending — see roadmap 2026-02-17-gap-auto-doc-01-gap-detection.md")
+>
+> The logging import and logger = get_logger(__name__) must be at the top of every file.
+Task 7 — TDD Test Stubs (Red Phase)
+Rubric: Casey — Structured Logging & Debugging (25 pts) | Effort: 20 min
+Save to: ai-backend/tests/knowledge_builder/
+Prompt to paste into Claude/ChatGPT:
+> I need TDD test stubs for the Knowledge Builder Agent. These are RED phase tests — they should be properly written pytest tests that will FAIL because the implementation isn't done yet. That's the point (TDD: write tests first, then implement).
+>
+> Create these files:
+>
+> ai-backend/tests/knowledge_builder/__init__.py — empty
+>
+> ai-backend/tests/knowledge_builder/conftest.py — pytest fixtures:
+> - mock_supabase — a MagicMock of the Supabase client
+> - sample_gap — a KnowledgeGap instance with realistic test data
+> - sample_style_profile — a StyleProfile instance with realistic test data
+> - gap_service — a GapDetectionService instance using mock_supabase
+>
+> ai-backend/tests/knowledge_builder/test_gap_detection.py — class TestGapDetectionService with:
+> - test_detect_gaps_returns_list — asserts result is a list
+> - test_detect_gaps_filters_below_threshold — asserts gaps below min_severity are excluded
+> - test_detect_gaps_empty_when_no_history — asserts empty list is returned (not error) when no gaps
+> - test_calculate_severity_increasing_trend_scores_higher — asserts increasing trend scores higher than stable
+> - test_calculate_severity_formula_matches_prd — asserts formula: (count * 2) + (users * 3) + (trend_multiplier * 5)
+>
+> ai-backend/tests/knowledge_builder/test_document_generation.py — class TestDocumentGenerationService with:
+> - test_generate_document_returns_generated_document — asserts return type is GeneratedDocument
+> - test_validate_quality_rejects_too_short — asserts content under 200 words fails quality check
+> - test_validate_quality_passes_sufficient_content — asserts proper content passes
+>
+> Use pytest, pytest-asyncio, unittest.mock.MagicMock. All tests should use @pytest.mark.asyncio for async methods.
+> Import the services from app.services.gap_detection etc. (these exist as stubs that raise NotImplementedError).
+> The tests should fail with NotImplementedError — that is correct and expected for TDD red phase.
+Task 8 — System Architecture Diagram (Clean Visual)
+Rubric: Jason — System Understanding (20 pts) | Effort: 15 min
+Save to: knowledge-agent/midterm/system-diagram.md
+Prompt to paste into Claude/ChatGPT:
+> I need a clean system diagram for the Knowledge Builder Agent to use in my midterm presentation slides. I currently have only an ASCII art version buried in a large PRD.
+>
+> The system has these layers and components:
+> - Trigger layer: Manual trigger (admin clicks button on dashboard) OR scheduled cron job (daily)
+> - Orchestration: KnowledgeBuilderOrchestrator — coordinates the full pipeline
+> - Core services: GapDetectionService (reads from knowledge_gap_analysis view in Supabase) → StyleExtractionService (reads top docs from company KB) → DocumentGenerationService (calls Claude Sonnet 4.5 via OpenRouter, uses RAG retrieval)
+> - Storage: Supabase PostgreSQL — stores results in knowledge_builder_suggestions table
+> - Notification: Resend email API → sends HTML digest to franchisor admin with link to dashboard
+> - Review: Admin approves/edits/dismisses in-app via modal. Approve → doc published to KB → enters RAG pipeline (chunked, embedded, searchable)
+> - Observability: LangFuse traces all LLM calls
+>
+> Please create a system-diagram.md file with:
+> 1. A clean Mermaid diagram (flowchart LR or TD) showing the full pipeline
+> 2. A brief 3-sentence description of the system goal underneath
+> 3. A "Key Design Decisions" section with 3 bullets explaining why key architectural choices were made (e.g., why on-demand vs. batch generation, why human-in-the-loop approval, why structlog for observability)
+>
+> The Mermaid diagram will render in GitHub and most slide tools. Keep it readable — not too many nodes.
+Task 10 — Slide Deck (You Do This)
+Rubric: Guest Grader — Presentation (10 pts) | Effort: 60–90 min
+No prompt needed — you build this. Content sources:
+Product slides: midterm/differentiation.md, midterm/falsification-test.md, midterm/system-diagram.md, midterm/failure-and-pivot.md, midterm/customer-research.md
+Technical slides: aiDocs/prd.md (MVP scope, success metrics), roadmap files (phases), scripts/build.js output screenshot
+Format: 50% product/system design, 50% technical demo/process evidence
+Frame as a pitch to C-suite (Casey and Jason are the executives)
+Quick-Reference Checklist
+#	Task	Save to	Est. Time
+1	Falsification test	midterm/falsification-test.md	20 min
+2	Differentiation grid doc	midterm/differentiation.md	15 min
+3	Failure & pivot plan	midterm/failure-and-pivot.md	15 min
+4	Customer research	midterm/customer-research.md	20 min
+5	Check off roadmap tasks	Update 4 roadmap files	10 min
+6	Phase 1 service stubs	ai-backend/app/services/	30 min
+7	TDD test stubs (red)	ai-backend/tests/knowledge_builder/	20 min
+8	System diagram (Mermaid)	midterm/system-diagram.md	15 min
+9	Git commits	(run git commands)	10 min
+10	Slide deck	PowerPoint / Google Slides	60–90 min
+Total estimated time: ~4 hours (not counting the slide deck)

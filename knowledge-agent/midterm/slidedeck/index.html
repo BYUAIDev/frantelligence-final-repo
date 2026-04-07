@@ -1,0 +1,670 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Knowledge Builder Agent — Midterm</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"
+    />
+
+    <style>
+      :root {
+        --accent: #f59e0b;
+        --green: #4ade80;
+        --red: #f87171;
+        --dim: #94a3b8;
+        --surface: rgba(255, 255, 255, 0.05);
+        --border: rgba(255, 255, 255, 0.1);
+        --bg: #0f172a;
+        --bg2: #1e293b;
+      }
+
+      .reveal {
+        font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+        background: var(--bg);
+      }
+      .reveal .slides section {
+        text-align: left;
+      }
+
+      .reveal h1 {
+        font-size: 2.2em;
+        color: #fff;
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+      }
+      .reveal h2 {
+        font-size: 1.45em;
+        color: #fff;
+        letter-spacing: -0.02em;
+        border-bottom: 2px solid var(--accent);
+        padding-bottom: 0.2em;
+        margin-bottom: 0.55em;
+      }
+      .reveal h3 {
+        font-size: 0.72em;
+        color: var(--accent);
+        text-transform: uppercase;
+        letter-spacing: 0.13em;
+        margin-bottom: 0.15em;
+      }
+      .reveal p,
+      .reveal li {
+        font-size: 0.78em;
+        color: #cbd5e1;
+        line-height: 1.65;
+      }
+      .reveal li {
+        margin-bottom: 0.3em;
+      }
+      .reveal strong {
+        color: #fff;
+      }
+      .reveal code {
+        font-size: 0.76em;
+        background: var(--bg2);
+        padding: 0.1em 0.35em;
+        border-radius: 4px;
+        color: #e2e8f0;
+      }
+      .reveal pre {
+        background: var(--bg2);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 0.6em 1em;
+        margin: 0;
+      }
+      .reveal pre code {
+        background: none;
+        padding: 0;
+        font-size: 0.7em;
+      }
+
+      /* ── Title / Closing ── */
+      .title-slide {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      .title-slide h1 {
+        font-size: 2.4em;
+      }
+      .title-slide h2 {
+        border: none;
+        font-size: 1.8em;
+      }
+      .subtitle {
+        color: var(--dim);
+        font-size: 0.85em;
+        letter-spacing: 0.04em;
+        margin: 0.2em 0 0.6em;
+      }
+      .closing-imgs {
+        display: flex;
+        gap: 2em;
+        justify-content: center;
+        margin-top: 0.8em;
+      }
+
+      /* ── Section divider ── */
+      .section-slide {
+        background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%) !important;
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      .section-slide h2 {
+        border: none;
+        font-size: 1.9em;
+      }
+      .part-label {
+        display: inline-block;
+        font-size: 0.65em;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        color: var(--accent);
+        background: rgba(245, 158, 11, 0.1);
+        border: 1px solid rgba(245, 158, 11, 0.3);
+        border-radius: 4px;
+        padding: 0.2em 0.85em;
+        margin-bottom: 0.5em;
+      }
+
+      /* ── Goofy images ── */
+      .goofy {
+        width: 300px;
+        border-radius: 12px;
+        flex-shrink: 0;
+      }
+      .title-slide .goofy {
+        width: 280px;
+      }
+      .closing-imgs .goofy {
+        width: 260px;
+      }
+
+      /* ── Two-column layout ── */
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 1.6em;
+        align-items: center;
+      }
+      .two-col.rev {
+        grid-template-columns: auto 1fr;
+      }
+      .two-col ul {
+        margin: 0;
+        padding-left: 1.1em;
+      }
+
+      /* ── Full-bleed image slide ── */
+      .img-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0.3em;
+        max-height: 500px !important;
+        overflow: hidden;
+      }
+      /* Reveal.js slides are 720px tall; headers take ~120px; margin eats ~100px.
+       Remaining safe space ≈ 430px. Using px (not vh) because Reveal scales the
+       entire slide as a unit — percentage viewport units are unreliable here. */
+      .img-fill {
+        max-height: 450px !important;
+        max-width: 80% !important;
+        height: auto !important;
+        width: auto !important;
+        object-fit: contain !important;
+        border-radius: 10px;
+        border: 1px solid var(--border);
+        display: block;
+      }
+
+      /* ── Problem cards ── */
+      .card-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1em;
+        margin-top: 0.3em;
+      }
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 0.9em 1em;
+        font-size: 0.78em;
+        color: #cbd5e1;
+        line-height: 1.5;
+      }
+      .card-label {
+        display: block;
+        font-size: 0.68em;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--accent);
+        margin-bottom: 0.35em;
+      }
+
+      /* ── Quote cards ── */
+      .quote-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.2em;
+        margin-top: 0.4em;
+      }
+      .quote-card {
+        background: var(--surface);
+        border-left: 3px solid var(--accent);
+        border-radius: 0 10px 10px 0;
+        padding: 1em 1.2em;
+      }
+      .quote-card p {
+        font-size: 0.82em;
+        color: #e2e8f0;
+        font-style: italic;
+        margin: 0 0 0.5em;
+      }
+      .attribution {
+        font-size: 0.62em;
+        color: var(--dim);
+      }
+
+      /* ── Hypothesis block ── */
+      .hyp {
+        background: rgba(245, 158, 11, 0.07);
+        border: 1px solid rgba(245, 158, 11, 0.25);
+        border-radius: 10px;
+        padding: 0.9em 1.3em;
+        margin-bottom: 0.7em;
+      }
+      .hyp p {
+        font-size: 0.92em !important;
+        color: #f8fafc !important;
+        line-height: 1.55;
+        margin: 0;
+      }
+
+      /* ── Pipeline pills ── */
+      .pipeline {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4em;
+        margin: 0.4em 0 0.75em;
+      }
+      .pipeline span {
+        background: rgba(245, 158, 11, 0.1);
+        border: 1px solid rgba(245, 158, 11, 0.28);
+        border-radius: 5px;
+        padding: 0.18em 0.6em;
+        font-size: 0.68em;
+        color: var(--accent);
+      }
+
+      /* ── Roadmap ── */
+      .roadmap-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0.9em;
+        margin-top: 0.4em;
+      }
+      .phase {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 0.85em 0.9em;
+        font-size: 0.76em;
+        color: #cbd5e1;
+        line-height: 1.5;
+      }
+      .phase-num {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 1.55em;
+        height: 1.55em;
+        background: var(--accent);
+        color: #000;
+        border-radius: 50%;
+        font-weight: 700;
+        font-size: 0.88em;
+        margin-bottom: 0.35em;
+      }
+      .phase strong {
+        display: block;
+        color: #fff;
+        margin-bottom: 0.25em;
+      }
+
+      /* ── Success / Failure ── */
+      .sf-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.2em;
+        margin-top: 0.35em;
+      }
+      .sf-col {
+        padding: 0.85em 1em;
+        border-radius: 10px;
+      }
+      .sf-col.win {
+        background: rgba(74, 222, 128, 0.07);
+        border: 1px solid rgba(74, 222, 128, 0.22);
+      }
+      .sf-col.lose {
+        background: rgba(248, 113, 113, 0.07);
+        border: 1px solid rgba(248, 113, 113, 0.22);
+      }
+      .sf-col h4 {
+        font-size: 0.72em;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin: 0 0 0.5em;
+      }
+      .sf-col.win h4 {
+        color: var(--green);
+      }
+      .sf-col.lose h4 {
+        color: var(--red);
+      }
+      .sf-col ul {
+        margin: 0;
+        padding-left: 1.1em;
+      }
+      .sf-col li {
+        font-size: 0.75em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <!-- ══════════════════════════════════════════
+     1 · TITLE
+══════════════════════════════════════════ -->
+        <section class="title-slide">
+          <h1>Knowledge Builder Agent</h1>
+          <p class="subtitle">
+            Frantelligence &nbsp;·&nbsp; Midterm Presentation &nbsp;·&nbsp; Feb 2026
+          </p>
+          <img src="../CutesyPicture.png" class="goofy" alt="" />
+        </section>
+
+        <!-- ══════════════════════════════════════════
+     2 · WHAT IS FRANTELLIGENCE
+══════════════════════════════════════════ -->
+        <section>
+          <h3>About the platform</h3>
+          <h2>What is Frantelligence?</h2>
+          <div class="two-col">
+            <ul>
+              <li>AI-first franchise <strong>operations platform</strong></li>
+              <li>Built for mid-market franchisors — 10 to 500 locations</li>
+              <li>Replaces scattered docs, slow support, and tribal knowledge</li>
+              <li>Modules: Knowledge Assistant · Financial Insights · Ticketing · LMS</li>
+            </ul>
+            <img src="../EgyptianFranchise.png" class="goofy" alt="" />
+          </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════
+     3 · KNOWLEDGE BUILDER AGENT
+══════════════════════════════════════════ -->
+        <section>
+          <h3>The feature we're building</h3>
+          <h2>Knowledge Builder Agent</h2>
+          <div class="two-col">
+            <ul>
+              <li><strong>Detects</strong> knowledge gaps from franchise activity</li>
+              <li><strong>Drafts</strong> SOPs, FAQs, and guides automatically</li>
+              <li><strong>Delivers</strong> updates via Slack, Teams, or SMS</li>
+              <li>Closes the loop between franchisor expertise and franchisee execution</li>
+            </ul>
+            <img src="../MedievalFranchise.png" class="goofy" alt="" />
+          </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════
+     4 · THE PROBLEM
+══════════════════════════════════════════ -->
+        <section>
+          <h3>Why this matters</h3>
+          <h2>The Problem</h2>
+          <div class="card-grid">
+            <div class="card">
+              <span class="card-label">Pain</span>
+              Franchisors answer the same questions repeatedly across every location
+            </div>
+            <div class="card">
+              <span class="card-label">Root cause</span>
+              Institutional knowledge lives in people's heads — not in the system
+            </div>
+            <div class="card">
+              <span class="card-label">Cost</span>
+              Hours lost per week. Inconsistent execution. Slower onboarding.
+            </div>
+          </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════
+     5 · CUSTOMER ANALYSIS
+══════════════════════════════════════════ -->
+        <section>
+          <h3>Deep customer analysis</h3>
+          <h2>Who We're Building For</h2>
+          <div class="two-col rev">
+            <img src="../CutesyPicture.png" class="goofy" alt="" />
+            <ul>
+              <li><strong>The Franchisor Operations Team</strong></li>
+              <li>Manages 10–500 locations across markets</li>
+              <li>Owns SOPs, training materials, and institutional knowledge</li>
+              <li>Spends 30–50% of support time answering repeat questions</li>
+              <li>Needs leverage — not more headcount</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════
+     6 · CUSTOMER CONVERSATIONS
+══════════════════════════════════════════ -->
+        <section>
+          <h3>Evidence of demand</h3>
+          <h2>Customer Conversations</h2>
+          <div class="quote-grid">
+            <div class="quote-card">
+              <p>"We answer the same questions over and over. There has to be a better way."</p>
+              <span class="attribution"
+                >Rachel Bridges &nbsp;·&nbsp; VP Operations, Planet Fitness franchise group</span
+              >
+            </div>
+            <div class="quote-card">
+              <p>
+                "Our knowledge is locked in my head. When I'm not available, things fall apart."
+              </p>
+              <span class="attribution"
+                >Jeff Piejack &nbsp;·&nbsp; Owner, Ultimate Ninjas franchise</span
+              >
+            </div>
+          </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════
+     7 · FOUNDING HYPOTHESIS
+══════════════════════════════════════════ -->
+        <section>
+          <h3>Founding hypothesis</h3>
+          <h2>The Bet We're Making</h2>
+          <div class="hyp">
+            <p>
+              Franchise operators will pay for a tool that turns institutional knowledge into a
+              self-updating, always-available answer system.
+            </p>
+          </div>
+          <ul>
+            <li>
+              <strong>Core assumption:</strong> The bottleneck is knowledge capture, not creation
+            </li>
+            <li><strong>Signal:</strong> Repeated questions = uncodified SOPs</li>
+            <li><strong>Bet:</strong> Automate the detect → draft → deliver loop</li>
+          </ul>
+        </section>
+
+        <!-- ══════════════════════════════════════════
+     8 · FALSIFICATION TEST
+══════════════════════════════════════════ -->
+        <section>
+          <h3>Falsification test</h3>
+          <h2 style="margin-bottom: 0.2em">Pressure-Testing the Hypothesis</h2>
+          <div class="img-slide">
+            <img
+              src="../FalsificationGrid.png"
+              class="img-fill"
+              alt="Falsification Grid — four lenses"
+            />
+          </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════
+     9 · DIFFERENTIATION
+══════════════════════════════════════════ -->
+        <section>
+          <h3>2×2 differentiation grid</h3>
+          <h2 style="margin-bottom: 0.2em">The White Space We Occupy</h2>
+          <div class="img-slide">
+            <img src="../DifferentiationChart.png" class="img-fill" alt="Differentiation Chart" />
+          </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════
+     10 · SYSTEM ARCHITECTURE
+══════════════════════════════════════════ -->
+        <section>
+          <h3>System architecture</h3>
+          <h2>Where the Knowledge Builder Plugs In</h2>
+          <div class="img-slide">
+            <img src="../ArchitectureDiagram.png" class="img-fill" alt="Architecture Diagram" />
+          </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════
+     11 · SECTION DIVIDER
+══════════════════════════════════════════ -->
+        <section class="section-slide">
+          <span class="part-label">Technical Process</span>
+          <h2>How We Build</h2>
+        </section>
+
+        <!-- ══════════════════════════════════════════
+     12 · DEVELOPMENT PIPELINE
+══════════════════════════════════════════ -->
+        <section>
+          <h3>Document-driven development</h3>
+          <h2>The Pipeline — Every Feature, Every Time</h2>
+          <div class="pipeline">
+            <span>PRD</span><span>Plan</span><span>Roadmap</span><span>Implement</span>
+            <span>Verify</span><span>Test</span><span>Log</span><span>Commit</span>
+          </div>
+          <ul>
+            <li><code>prd.md</code> defines scope before a line of code is written</li>
+            <li><code>changelog.md</code> records every decision and its rationale</li>
+            <li><code>coding-style.md</code> keeps AI output consistent across sessions</li>
+          </ul>
+        </section>
+
+        <!-- ══════════════════════════════════════════
+     13 · INFRASTRUCTURE
+══════════════════════════════════════════ -->
+        <section>
+          <h3>Structured logging &amp; CLI scripts</h3>
+          <h2>Infrastructure for AI-Assisted Debugging</h2>
+          <div class="two-col">
+            <ul>
+              <li>
+                <strong>Two-folder pattern:</strong> <code>aiDocs/</code> (PRD, plans) +
+                <code>ai/</code> (working files)
+              </li>
+              <li><strong>CLI scripts:</strong> JSON output, non-zero exit on failure</li>
+              <li>
+                <strong>Secrets:</strong> <code>.testEnvVars</code> gitignored, example committed
+              </li>
+              <li>
+                <strong>Logging:</strong> <code>kb_logging.py</code> via <code>structlog</code>
+              </li>
+            </ul>
+            <pre><code class="language-python">log_entry(log, "ingest_doc", doc_id=doc_id)
+log_exit(log,  "ingest_doc", chunks=len(chunks))
+log_error(log, "ingest_doc", error=e)</code></pre>
+          </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════
+     14 · MVP ROADMAP
+══════════════════════════════════════════ -->
+        <section>
+          <h3>MVP roadmap</h3>
+          <h2>Four Phases to Launch</h2>
+          <div class="roadmap-grid">
+            <div class="phase">
+              <span class="phase-num">1</span>
+              <strong>Foundation</strong>
+              FastAPI scaffolding, Supabase schema, auth
+            </div>
+            <div class="phase">
+              <span class="phase-num">2</span>
+              <strong>Core RAG</strong>
+              Document ingestion, embeddings, query endpoint
+            </div>
+            <div class="phase">
+              <span class="phase-num">3</span>
+              <strong>Builder Agent</strong>
+              Gap detection, SOP drafting, delivery hooks
+            </div>
+            <div class="phase">
+              <span class="phase-num">4</span>
+              <strong>Production</strong>
+              Feature flags, observability, beta launch
+            </div>
+          </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════
+     15 · SUCCESS & FAILURE
+══════════════════════════════════════════ -->
+        <section>
+          <h3>Success &amp; failure planning</h3>
+          <h2>How We Know If It's Working</h2>
+          <div class="sf-grid">
+            <div class="sf-col win">
+              <h4>We succeed if</h4>
+              <ul>
+                <li>Support tickets drop 30%</li>
+                <li>Knowledge base grows without manual effort</li>
+                <li>Time-to-answer falls below 30 seconds</li>
+              </ul>
+            </div>
+            <div class="sf-col lose">
+              <h4>We pivot if</h4>
+              <ul>
+                <li>Operators won't upload source documents</li>
+                <li>AI drafts require heavy manual correction</li>
+                <li>No willingness to pay at target price point</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- ══════════════════════════════════════════
+     16 · CLOSING
+══════════════════════════════════════════ -->
+        <section class="title-slide">
+          <h2>Knowledge Builder Agent</h2>
+          <p class="subtitle">Questions?</p>
+          <div class="closing-imgs">
+            <img src="../EgyptianFranchise.png" class="goofy" alt="" />
+            <img src="../MedievalFranchise.png" class="goofy" alt="" />
+          </div>
+        </section>
+      </div>
+      <!-- /.slides -->
+    </div>
+    <!-- /.reveal -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/highlight/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/notes/notes.min.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        slideNumber: 'c/t',
+        transition: 'slide',
+        transitionSpeed: 'fast',
+        controls: true,
+        progress: true,
+        center: false,
+        width: 1280,
+        height: 720,
+        margin: 0.07,
+        plugins: [RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>
