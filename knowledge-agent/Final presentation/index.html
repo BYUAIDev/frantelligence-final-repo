@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Frantelligence Final Presentation</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/black.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"
+    />
+
+    <style>
+      :root {
+        --bg: #07090d;
+        --bg-soft: #0f141c;
+        --text: #f5f7fa;
+        --muted: #9ca7b7;
+        --accent: #7dd3fc;
+        --accent-soft: rgba(125, 211, 252, 0.18);
+        --border: rgba(255, 255, 255, 0.12);
+      }
+
+      .reveal {
+        font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+        background: radial-gradient(circle at 10% 10%, #111827 0%, var(--bg) 45%);
+      }
+
+      .reveal .slides section {
+        text-align: left;
+      }
+
+      .reveal h1,
+      .reveal h2,
+      .reveal h3 {
+        color: var(--text);
+        letter-spacing: -0.02em;
+      }
+
+      .reveal h1 {
+        font-size: 2.35em;
+        line-height: 1.06;
+        margin-bottom: 0.2em;
+      }
+
+      .reveal h2 {
+        font-size: 1.5em;
+        margin-bottom: 0.4em;
+      }
+
+      .reveal h3 {
+        font-size: 0.7em;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        color: var(--accent);
+        margin-bottom: 0.2em;
+      }
+
+      .reveal p,
+      .reveal li {
+        color: #d1d8e3;
+        font-size: 0.8em;
+        line-height: 1.6;
+      }
+
+      .reveal ul {
+        margin-top: 0.4em;
+      }
+
+      .reveal li {
+        margin-bottom: 0.26em;
+      }
+
+      .kicker {
+        color: var(--muted);
+        font-size: 0.72em;
+        letter-spacing: 0.09em;
+        text-transform: uppercase;
+      }
+
+      .hero {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 100%;
+      }
+
+      .hero h1 {
+        max-width: 1000px;
+      }
+
+      .subtitle {
+        color: var(--muted);
+        font-size: 0.8em;
+      }
+
+      .panel {
+        margin-top: 0.5em;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+        border: 1px solid var(--border);
+        border-left: 4px solid var(--accent);
+        border-radius: 10px;
+        padding: 0.7em 1em;
+      }
+
+      .panel strong {
+        color: var(--text);
+      }
+
+      .chip-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45em;
+        margin-top: 0.5em;
+      }
+
+      .chip {
+        font-size: 0.62em;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--accent);
+        border: 1px solid var(--accent-soft);
+        background: rgba(125, 211, 252, 0.08);
+        border-radius: 999px;
+        padding: 0.22em 0.72em;
+      }
+
+      .slide-image {
+        display: block;
+        width: 100%;
+        max-height: 520px;
+        object-fit: contain;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.02);
+      }
+
+      .centered {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        height: 100%;
+        flex-direction: column;
+      }
+
+      .big-demo {
+        font-size: 3.4em;
+        letter-spacing: -0.03em;
+      }
+
+      .mini {
+        font-size: 0.72em;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <!-- 1 -->
+        <section>
+          <div class="hero">
+            <p class="kicker">IS 590R · Winter 2026</p>
+            <h1>Frantelligence Final Presentation</h1>
+            <p class="subtitle">Knowledge Builder Agent · Final Deliverable</p>
+          </div>
+        </section>
+
+        <!-- 2 -->
+        <section>
+          <h3>Midterm to final delta</h3>
+          <h2>What Changed Since Midterm</h2>
+          <div class="panel">
+            <p>
+              We moved from concept confidence to evidence discipline: refined system model,
+              executed falsification, customer-driven product changes, and a working loop from
+              question -> gap -> generated doc -> review -> publish.
+            </p>
+          </div>
+          <div class="chip-row">
+            <span class="chip">Process over polish</span>
+            <span class="chip">Evidence-driven refinement</span>
+            <span class="chip">Live demo integrated</span>
+          </div>
+        </section>
+
+        <!-- 3 -->
+        <section>
+          <h3>System understanding</h3>
+          <h2>Old System Diagram</h2>
+          <img src="./old-system-diagram.svg" class="slide-image" alt="Old system diagram placeholder" />
+          <p class="mini">
+            Old model: unanswered questions were compiled, then answered manually by a human.
+          </p>
+        </section>
+
+        <!-- 4 -->
+        <section>
+          <h3>System understanding</h3>
+          <h2>New System Diagram</h2>
+          <img src="./new-system-diagram.svg" class="slide-image" alt="New system diagram placeholder" />
+          <p class="mini">
+            New model: AI compiles and drafts answers automatically, with human review before
+            publish.
+          </p>
+        </section>
+
+        <!-- 5 -->
+        <section>
+          <h3>Problem identification</h3>
+          <h2>Falsification Stages</h2>
+          <img src="./falsification-stages.svg" class="slide-image" alt="Falsification stages diagram" />
+        </section>
+
+        <!-- 6 -->
+        <section>
+          <h3>Customer loop</h3>
+          <h2>What Customer Feedback Changed</h2>
+          <ul>
+            <li>Per-gap generation was added so admins can fix one urgent gap fast</li>
+            <li>Bulk generation remains available for intentional batch cleanup</li>
+            <li>Workflow moved to in-app generation + editor-first review</li>
+            <li>Email-style prompts were reduced to optional/supporting role</li>
+          </ul>
+        </section>
+
+        <!-- 7 -->
+        <section>
+          <div class="centered">
+            <p class="kicker">Demo moment</p>
+            <h1 class="big-demo">Live Demo</h1>
+            <p class="subtitle">We will leave the slides and come back after demo.</p>
+          </div>
+        </section>
+
+        <!-- 8 -->
+        <section>
+          <h3>Agent architecture</h3>
+          <h2>How the AI Agent Uses RAG</h2>
+          <img src="./rag-agent-flow.svg" class="slide-image" alt="RAG flow diagram for knowledge builder" />
+        </section>
+
+        <!-- 9 -->
+        <section>
+          <h3>Technical process</h3>
+          <h2>PRD -> MVP -> Plan -> Roadmap -> Code</h2>
+          <div class="chip-row">
+            <span class="chip">PRD anchor</span>
+            <span class="chip">MVP scope</span>
+            <span class="chip">Roadmap phases</span>
+            <span class="chip">Iterative implementation</span>
+            <span class="chip">Living documents</span>
+          </div>
+          <div class="panel">
+            <p>
+              Quick proof slide: we used document-driven development and AI-assisted iteration.
+              We will reference artifacts directly without lingering here.
+            </p>
+          </div>
+        </section>
+
+        <!-- 10 -->
+        <section>
+          <h3>Debugging discipline</h3>
+          <h2>Structured Logging + Test-Log-Fix Loop</h2>
+          <ul>
+            <li>Structured logs are integrated in real application paths</li>
+            <li>CLI test scripts support fast verification and clear exit behavior</li>
+            <li>Debugging loop: run tests -> inspect logs -> fix -> re-run</li>
+            <li>Process evidence is tracked across docs and changelog history</li>
+          </ul>
+        </section>
+
+        <!-- 11 -->
+        <section>
+          <h3>Success and failure planning</h3>
+          <h2>Where We Stand Right Now</h2>
+          <ul>
+            <li>Working generated-doc flow is implemented and demoable</li>
+            <li>Pre and during falsification stages are validated</li>
+            <li>Post/future falsification depends on sustained client adoption</li>
+            <li>Next gate: measure whether generated docs are actually used</li>
+          </ul>
+        </section>
+
+        <!-- 12 -->
+        <section>
+          <div class="hero">
+            <p class="kicker">Final reflection</p>
+            <h1>Process Quality Drives Product Quality</h1>
+            <p class="subtitle">Questions?</p>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/highlight/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/plugin/notes/notes.min.js"></script>
+    <script>
+      Reveal.initialize({
+        hash: true,
+        slideNumber: "c/t",
+        transition: "fade",
+        transitionSpeed: "fast",
+        controls: true,
+        progress: true,
+        center: false,
+        width: 1280,
+        height: 720,
+        margin: 0.07,
+        plugins: [RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
+</html>

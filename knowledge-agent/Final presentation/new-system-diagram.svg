@@ -1,0 +1,46 @@
+<svg width="1400" height="800" viewBox="0 0 1400 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0f16"/>
+      <stop offset="100%" stop-color="#0f1a27"/>
+    </linearGradient>
+    <marker id="arrow2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L10,3 L0,6 Z" fill="#7dd3fc"/>
+    </marker>
+    <style>
+      .title { fill: #f8fafc; font: 700 42px Inter, Segoe UI, sans-serif; }
+      .label { fill: #dbe4ef; font: 600 24px Inter, Segoe UI, sans-serif; }
+      .body { fill: #9fb0c4; font: 400 18px Inter, Segoe UI, sans-serif; }
+      .box { fill: #0f1c2b; stroke: #7dd3fc; stroke-opacity: 0.55; stroke-width: 2; rx: 16; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1400" height="800" fill="url(#bg2)"/>
+  <text x="700" y="80" text-anchor="middle" class="title">New System Diagram (Placeholder)</text>
+
+  <rect x="80" y="230" width="250" height="220" class="box"/>
+  <text x="205" y="290" text-anchor="middle" class="label">User Questions</text>
+  <text x="205" y="330" text-anchor="middle" class="body">Input from</text>
+  <text x="205" y="360" text-anchor="middle" class="body">franchise users</text>
+
+  <rect x="390" y="230" width="260" height="220" class="box"/>
+  <text x="520" y="290" text-anchor="middle" class="label">AI Compile</text>
+  <text x="520" y="330" text-anchor="middle" class="body">Detects gaps and</text>
+  <text x="520" y="360" text-anchor="middle" class="body">groups themes</text>
+
+  <rect x="710" y="230" width="260" height="220" class="box"/>
+  <text x="840" y="290" text-anchor="middle" class="label">AI Answers</text>
+  <text x="840" y="330" text-anchor="middle" class="body">Generates draft</text>
+  <text x="840" y="360" text-anchor="middle" class="body">docs automatically</text>
+
+  <rect x="1030" y="230" width="290" height="220" class="box"/>
+  <text x="1175" y="290" text-anchor="middle" class="label">Review + Publish</text>
+  <text x="1175" y="330" text-anchor="middle" class="body">Human QA, then</text>
+  <text x="1175" y="360" text-anchor="middle" class="body">save and re-index</text>
+
+  <line x1="330" y1="340" x2="390" y2="340" stroke="#7dd3fc" stroke-width="3" marker-end="url(#arrow2)"/>
+  <line x1="650" y1="340" x2="710" y2="340" stroke="#7dd3fc" stroke-width="3" marker-end="url(#arrow2)"/>
+  <line x1="970" y1="340" x2="1030" y2="340" stroke="#7dd3fc" stroke-width="3" marker-end="url(#arrow2)"/>
+
+  <text x="700" y="700" text-anchor="middle" class="body">Replace this placeholder with final vector/SVG diagram later</text>
+</svg>
