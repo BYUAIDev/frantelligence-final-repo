@@ -4,174 +4,147 @@ Use this as a speaking draft for a 20-minute presentation. Adapt names and timin
 
 ---
 
-## Slide 1 - Title / What Changed Since Midterm (0:00-1:30)
+## Slide 1 - Title / Framing (0:00-1:00)
 
-"Today we are not re-presenting midterm. We are showing what changed after building, testing, and learning in production-like conditions.
-
-Our project is Frantelligence's Knowledge Builder Agent. The midterm was about the concept. The final is about process, proof, and what we learned once the concept hit reality."
-
-Transition:
-"We will walk through system evolution, falsification, customer-driven changes, technical process, and a live demo threaded throughout."
+"Today is the continuation from midterm, not a repeat. Midterm was our concept checkpoint. Final is process, execution, and evidence of learning."
 
 ---
 
-## Slide 2 - System Understanding Evolved (1:30-3:30)
+## Slide 2 - Explicit Midterm -> Final Changes (1:00-3:30)
 
-"At midterm, our system model focused mostly on chat and retrieval. What we missed was the full feedback loop.
+"Here are the concrete changes since midterm:
 
-Now the system includes a closed loop:
-user questions -> gap detection -> generate doc -> editor review -> save and re-index -> improved retrieval -> fewer repeated gaps.
+From concept to working closed loop: we moved from a gap-detection idea to a demoable workflow:
+What Users Are Asking -> Generate Doc -> KB editor review -> Save & Re-index.
 
-The key system learning is that this is not only an answer engine. It is a knowledge improvement engine."
+Primary UX shifted from email-first to in-app action:
+falsification plus interviews pushed us away from weekly email as the main driver.
+Now generation is button-driven in product, and email is secondary.
+
+Per-gap generation was added, not just bulk:
+we evolved from batch assumptions to per-card Generate Doc plus optional bulk for intentional batches.
+
+System understanding matured:
+midterm emphasized RAG answer flow; final adds an explicit feedback flywheel where usage signals improve KB quality.
+
+Hypotheses moved from designed tests to executed falsification with product consequences."
 
 Transition:
-"That system learning changed how we framed the problem and how we falsified our assumptions."
+"Now we will show this system evolution visually."
 
 ---
 
-## Slide 3 - Problem Refinement + Falsification Stages (3:30-6:30)
+## Slide 3 - Old System Diagram (3:30-4:30)
 
-"Our refined problem statement is:
-franchisors repeatedly answer the same operational questions because institutional knowledge is not captured and deployed fast enough in the workflow.
-
-We ran falsification as stages, not as one event."
-
-**Use this exact structure:**
-
-"Pre - Pitched the idea to clients - Done.
-
-During - Does it work well with the current system, does it break anything - It works, so done.
-
-Post - Now that we have it built and working, the next falsification gate is to get real clients using it. This is where the proof is really in the pudding.
-
-Future - Do clients use the documents created by this agent - Double proven, and this will take time for this to happen."
-
-"So today we can claim the pre and during gates are validated, and the post/future gates are active measurement gates we are tracking."
-
-Transition:
-"Next, here is how customer feedback changed what we actually built."
+"Old system: unanswered questions were compiled by the system, then a person manually answered them all. That made knowledge improvement slow and bottlenecked."
 
 ---
 
-## Slide 4 - Customer Focus and Interaction Loop (6:30-9:00)
+## Slide 4 - New System Diagram (4:30-5:30)
 
-"We engaged target users beyond friends and family and got two high-impact signals:
-
-First, they wanted to generate from one specific gap, not always in bulk.
-Second, they preferred in-app action over email-heavy prompts.
-
-So we changed the product:
-per-gap generation plus optional bulk generation, and editor-first in-app review.
-
-This is our feedback loop:
-engage -> learn -> change -> re-engage.
-That loop directly shaped feature decisions, not just messaging."
-
-Transition:
-"Now we will show the product flow in the context of that loop."
+"New system: AI compiles and drafts answers automatically, then humans review and publish. This compresses time from signal to reusable knowledge."
 
 ---
 
-## Slide 5 - Live Demo Thread Part 1: Gap to Draft (9:00-11:30)
+## Slide 5 - Falsification Stages (5:30-7:00)
 
-"In this demo step, we start where users feel pain: unresolved repeated questions.
+"We ran falsification in stages, not as a one-time checkbox.
 
-We identify a gap, trigger generation, and produce a draft document.
+Pre - Pitched the idea to clients - Done.
+During - Does it work with the current system and avoid breakage - Done.
+Post - Now that it works, next gate is real client usage. This is where proof is in the pudding.
+Future - Do clients actually use docs created by the agent - this takes time and longitudinal tracking.
 
-What to notice:
-the action is immediate, contextual, and connected to the exact observed gap.
-This reduces the friction between discovering a knowledge hole and drafting a fix."
-
-Transition:
-"Now we show review and publish, because generation alone is not enough."
+So we claim pre and during validation now, with post and future as active gates."
 
 ---
 
-## Slide 6 - Live Demo Thread Part 2: Review to Publish (11:30-13:30)
+## Slide 6 - Client Voice / Customer Interaction (7:00-8:30)
 
-"Here we move into editor review, then save and re-index.
+"One ops conversation from a fitness franchise made this clear: the pain was around creating trainings, controlling access, and circulating docs consistently across locations.
 
-This is critical: value is only realized when generated knowledge becomes searchable and reusable in the system.
-
-This closes the loop and creates measurable improvement over time."
+That insight reinforced our move toward in-app action and guided our workflow design."
 
 Transition:
-"Next is the technical process that made this build reliable and gradable."
+"Now we’ll show what changed in the product because of feedback."
 
 ---
 
-## Slide 7 - PRD to MVP to Roadmap to Code (13:30-15:30)
+## Slide 7 - Customer Loop -> Product Changes (8:30-10:00)
 
-"Our build process followed document-driven development:
-PRD -> MVP scope -> roadmap phases -> implementation.
+"Problem statement is now operationalized:
+not just support burden exists, but detect answer gaps and reduce time from signal to publishable documentation.
 
-We treated docs as living artifacts, not one-time submissions. As insights changed, docs changed.
+Our customer loop became concrete:
+engage -> learn -> change is visible in specific UX changes:
+per-gap action and in-app review path.
 
-We also used AI in an iterative workflow, not one-shot prompting:
-plan, implement, verify, revise."
-
-Transition:
-"Then we supported this with AI infrastructure and debugging discipline."
-
----
-
-## Slide 8 - AI Infrastructure + Logging/Debugging (15:30-17:00)
-
-"We maintained AI workflow infrastructure:
-context bookshelf, behavior guidance files, roadmaps, changelogs, and clean secret handling.
-
-For engineering quality, we integrated structured logging in the real application path and used test-log-fix loops.
-
-This gave us better diagnostics and faster iteration than ad-hoc debugging."
-
-Transition:
-"Finally, we measure where we stand now and what is still unproven."
+Competitive framing evolved too:
+we moved from static market view to build-informed positioning, distinguishing generic gap-auto-doc patterns from franchise-specific differentiation."
 
 ---
 
-## Slide 9 - Success/Failure Status + Honest Gaps (17:00-18:30)
+## Slide 8 - Live Demo (10:00-13:00)
 
-"Our success criteria included reduced repeat support load, better knowledge capture, and faster answer readiness.
+"Live demo. We’ll step through:
+What Users Are Asking -> Generate Doc -> KB Editor Review -> Save & Re-index."
 
-Where we are strong:
-we have working flow, clear customer-informed feature changes, and executed falsification stages through build.
+---
+
+## Slide 9 - How the Agent Uses RAG (13:00-14:30)
+
+"This diagram shows the RAG path and the feedback loop.
+RAG gives grounded responses now, and the builder loop improves future responses over time."
+
+---
+
+## Slide 10 - PRD/MVP/Roadmap Proof Slide (14:30-15:30)
+
+"Quick process proof:
+PRD -> MVP -> Plan -> Roadmap -> Code.
+
+We used documents as living build artifacts and updated them as product reality changed."
+
+---
+
+## Slide 11 - Technical Process + Logging (15:30-17:00)
+
+"On engineering process, we followed iterative plan/implement/review loops.
+Structured logging is integrated in real app flow, and we used test-log-fix cycles for debugging."
+
+---
+
+## Slide 12 - Success/Failure + Honest Limits (17:00-18:30)
+
+"What is validated:
+working closed-loop flow and executed early-stage falsification.
 
 What remains:
-post and future falsification gates depend on sustained real client usage over time.
-We are explicit about that and treating it as the next validation milestone."
-
-Transition:
-"We will close with what we learned and what we would do differently."
+post/future falsification gates depend on sustained client adoption and actual use of generated docs over time."
 
 ---
 
-## Slide 10 - Reflection + Close (18:30-20:00)
+## Slide 13 - Close (18:30-20:00)
 
-"Our biggest learning is that process quality drives product quality.
-
-The most important shift from midterm to final was moving from idea confidence to evidence discipline:
-system updates, customer loops, falsification gates, and implementation rigor.
-
-If we had another cycle, we would deepen post-launch instrumentation even earlier to accelerate post and future falsification."
-
-Close:
-"That is our final journey from hypothesis to working system with measured learning. We are ready for questions."
+"Biggest learning: process quality drives product quality.
+The shift from midterm to final was from idea confidence to evidence discipline.
+That is our journey and our current state. We’re ready for questions."
 
 ---
 
 ## Q&A Fast Answers (Prep)
 
-1) **What changed most since midterm?**
-"We discovered and implemented the closed feedback loop from user questions to improved knowledge assets, and that changed both our system design and UI workflow."
+1) **What changed most since midterm?**  
+"We operationalized the workflow from signal to published knowledge and made customer-driven UX shifts that are now demoable."
 
-2) **How do you know customer input actually changed the product?**
-"Per-gap generation and in-app editor-first flow came directly from customer friction with bulk-only and email-heavy approaches."
+2) **How did customer feedback concretely change the build?**  
+"Per-gap generation and in-app review replaced bulk-only and email-first assumptions."
 
-3) **What is still unproven?**
-"Longitudinal adoption and usage impact of generated documents across real client operations."
+3) **What is still unproven?**  
+"Long-term adoption and usage of generated docs by real clients."
 
-4) **Where is your strongest technical-process evidence?**
-"Document pipeline, roadmap progression, and structured logging plus test-log-fix artifacts."
+4) **What is your strongest technical-process evidence?**  
+"Living docs pipeline, roadmap progression, and structured logging with test-log-fix iteration."
 
-5) **What would you do next?**
-"Run the post/future falsification gates with active clients and tighten instrumentation around document adoption and downstream support impact."
+5) **What would you do next?**  
+"Run post/future falsification gates with active clients and deepen instrumentation around doc adoption and support impact."

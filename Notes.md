@@ -1,0 +1,3 @@
+As for the system diagram, I don't think we actually needed to change or pivot at all. We can explain that because we are building this into an already designed system it was like building a square piece to fit into a square hole. 
+The rubric says " a system diagram, a problem statement, a customer definition, success criteria, evidence of customer conversations. At final, we grade what happened when those artifacts met reality." I need to make sure that is actually met. 
+I should make it explicitly clear that our situation is unique because we were 

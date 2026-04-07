@@ -28,6 +28,9 @@
         --text: #f5f7fa;
         --muted: #9ca7b7;
         --accent: #7dd3fc;
+        --accent-2: #a78bfa;
+        --accent-3: #f97316;
+        --accent-4: #34d399;
         --accent-soft: rgba(125, 211, 252, 0.18);
         --border: rgba(255, 255, 255, 0.12);
       }
@@ -110,7 +113,7 @@
       .panel {
         margin-top: 0.5em;
         background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
-        border: 1px solid var(--border);
+        border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
         border-left: 4px solid var(--accent);
         border-radius: 10px;
         padding: 0.7em 1em;
@@ -132,8 +135,8 @@
         text-transform: uppercase;
         letter-spacing: 0.08em;
         color: var(--accent);
-        border: 1px solid var(--accent-soft);
-        background: rgba(125, 211, 252, 0.08);
+        border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+        background: color-mix(in srgb, var(--accent) 14%, transparent);
         border-radius: 999px;
         padding: 0.22em 0.72em;
       }
@@ -166,40 +169,150 @@
         font-size: 0.72em;
         color: var(--muted);
       }
+
+      .brand-wordmark {
+        width: 260px;
+        height: auto;
+        margin-top: 0.9em;
+        opacity: 0.95;
+      }
+
+      .brand-icon {
+        width: 62px;
+        height: 62px;
+        border-radius: 14px;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.02);
+      }
+
+      .slide-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .quote-card {
+        margin-top: 0.4em;
+        padding: 1em 1.2em;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+        border: 1px solid color-mix(in srgb, var(--accent) 34%, transparent);
+        border-left: 4px solid var(--accent);
+        border-radius: 10px;
+      }
+
+      .quote-text {
+        font-size: 0.95em;
+        color: #e5edf8;
+        line-height: 1.5;
+      }
+
+      .org-badge {
+        display: inline-block;
+        margin-top: 0.7em;
+        padding: 0.28em 0.7em;
+        border-radius: 999px;
+        border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+        color: #dce7f7;
+        font-size: 0.68em;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+      }
+
+      .evolution-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.7em;
+      }
+
+      .evo-box {
+        padding: 0.7em 0.8em;
+        border-radius: 10px;
+        border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+        background: rgba(255, 255, 255, 0.02);
+      }
+
+      .evo-box p {
+        margin: 0;
+        font-size: 0.71em;
+        line-height: 1.45;
+      }
+
+      .evo-box strong {
+        color: #ffffff;
+      }
+
+      .accent-purple {
+        --accent: var(--accent-2);
+      }
+
+      .accent-orange {
+        --accent: var(--accent-3);
+      }
+
+      .accent-green {
+        --accent: var(--accent-4);
+      }
     </style>
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
         <!-- 1 -->
-        <section>
+        <section class="accent-orange">
           <div class="hero">
             <p class="kicker">IS 590R · Winter 2026</p>
             <h1>Frantelligence Final Presentation</h1>
             <p class="subtitle">Knowledge Builder Agent · Final Deliverable</p>
+            <img
+              src="./lovable-uploads/f3eb529b-177c-4912-a6a7-552b9aff0517.png"
+              class="brand-wordmark"
+              alt="Frantelligence logo"
+            />
           </div>
         </section>
 
         <!-- 2 -->
-        <section>
+        <section class="accent-purple">
           <h3>Midterm to final delta</h3>
-          <h2>What Changed Since Midterm</h2>
-          <div class="panel">
-            <p>
-              We moved from concept confidence to evidence discipline: refined system model,
-              executed falsification, customer-driven product changes, and a working loop from
-              question -> gap -> generated doc -> review -> publish.
-            </p>
+          <div class="slide-head">
+            <h2>What Changed Since Midterm (Explicitly)</h2>
+            <img
+              src="./lovable-uploads/d414fd16-dec6-430d-8b0a-443b0de42a20.png"
+              class="brand-icon"
+              alt="Frantelligence mark"
+            />
           </div>
-          <div class="chip-row">
-            <span class="chip">Process over polish</span>
-            <span class="chip">Evidence-driven refinement</span>
-            <span class="chip">Live demo integrated</span>
+          <div class="evolution-grid">
+            <div class="evo-box">
+              <p>
+                <strong>Concept -> working closed loop:</strong> What Users Are Asking -> Generate
+                Doc -> KB editor -> Save &amp; Re-index.
+              </p>
+            </div>
+            <div class="evo-box">
+              <p>
+                <strong>Email-first -> in-app action:</strong> interviews and falsification made
+                generation button-driven in product; email became secondary.
+              </p>
+            </div>
+            <div class="evo-box">
+              <p>
+                <strong>Bulk assumption -> per-gap generation:</strong> now per-card Generate Doc +
+                optional bulk for intentional batches.
+              </p>
+            </div>
+            <div class="evo-box">
+              <p>
+                <strong>System model matured:</strong> from basic RAG flow to a usage-signal
+                feedback flywheel that improves KB quality.
+              </p>
+            </div>
           </div>
+          
         </section>
 
         <!-- 3 -->
-        <section>
+        <section class="accent-green">
           <h3>System understanding</h3>
           <h2>Old System Diagram</h2>
           <img src="./old-system-diagram.svg" class="slide-image" alt="Old system diagram placeholder" />
@@ -209,7 +322,7 @@
         </section>
 
         <!-- 4 -->
-        <section>
+        <section class="accent-green">
           <h3>System understanding</h3>
           <h2>New System Diagram</h2>
           <img src="./new-system-diagram.svg" class="slide-image" alt="New system diagram placeholder" />
@@ -220,26 +333,31 @@
         </section>
 
         <!-- 5 -->
-        <section>
-          <h3>Problem identification</h3>
-          <h2>Falsification Stages</h2>
+        <section class="accent-purple">
           <img src="./falsification-stages.svg" class="slide-image" alt="Falsification stages diagram" />
         </section>
 
         <!-- 6 -->
-        <section>
-          <h3>Customer loop</h3>
-          <h2>What Customer Feedback Changed</h2>
-          <ul>
-            <li>Per-gap generation was added so admins can fix one urgent gap fast</li>
-            <li>Bulk generation remains available for intentional batch cleanup</li>
-            <li>Workflow moved to in-app generation + editor-first review</li>
-            <li>Email-style prompts were reduced to optional/supporting role</li>
-          </ul>
+        <section class="accent-orange">
+          <h3>Customer interaction</h3>
+          <h2>Client Voice That Shaped the Build</h2>
+          <div class="quote-card">
+            <p class="quote-text">
+              "Pain around creating trainings, tracking access, and circulating documents across
+              the brand made the gap-detection plus auto-draft workflow immediately compelling."
+            </p>
+            <p class="mini">Interview summary: Rachel Bridges, operations training, Planet Fitness (Feb 2026).</p>
+            <span class="org-badge">Planet Fitness (logo placeholder)</span>
+          </div>
+          <div class="chip-row">
+            <span class="chip">Beyond friends/family</span>
+            <span class="chip">Engage -> learn -> change</span>
+            <span class="chip">Product decisions traced to feedback</span>
+          </div>
         </section>
 
         <!-- 7 -->
-        <section>
+        <section class="accent-orange">
           <div class="centered">
             <p class="kicker">Demo moment</p>
             <h1 class="big-demo">Live Demo</h1>
@@ -248,14 +366,14 @@
         </section>
 
         <!-- 8 -->
-        <section>
+        <section class="accent-green">
           <h3>Agent architecture</h3>
           <h2>How the AI Agent Uses RAG</h2>
           <img src="./rag-agent-flow.svg" class="slide-image" alt="RAG flow diagram for knowledge builder" />
         </section>
 
         <!-- 9 -->
-        <section>
+        <section class="accent-purple">
           <h3>Technical process</h3>
           <h2>PRD -> MVP -> Plan -> Roadmap -> Code</h2>
           <div class="chip-row">
@@ -274,7 +392,7 @@
         </section>
 
         <!-- 10 -->
-        <section>
+        <section class="accent-green">
           <h3>Debugging discipline</h3>
           <h2>Structured Logging + Test-Log-Fix Loop</h2>
           <ul>
@@ -286,7 +404,7 @@
         </section>
 
         <!-- 11 -->
-        <section>
+        <section class="accent-purple">
           <h3>Success and failure planning</h3>
           <h2>Where We Stand Right Now</h2>
           <ul>
@@ -298,11 +416,16 @@
         </section>
 
         <!-- 12 -->
-        <section>
+        <section class="accent-orange">
           <div class="hero">
             <p class="kicker">Final reflection</p>
             <h1>Process Quality Drives Product Quality</h1>
             <p class="subtitle">Questions?</p>
+            <img
+              src="./lovable-uploads/f3eb529b-177c-4912-a6a7-552b9aff0517.png"
+              class="brand-wordmark"
+              alt="Frantelligence logo"
+            />
           </div>
         </section>
       </div>
