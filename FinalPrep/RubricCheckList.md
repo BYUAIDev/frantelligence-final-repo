@@ -12,12 +12,12 @@ Source basis for this checklist:
 
 ## 0) Final Readiness Gate (Must-Have Conditions)
 
-- [ ] Repo and slides committed/pushed by deadline
-- [ ] Team has a **20-minute** timed deck and run-of-show
-- [ ] Team has a **working in-person demo** (plus backup recording)
+- [x] Repo and slides committed/pushed by deadline
+- [x] Team has a **20-minute** timed deck and run-of-show
+- [x] Team has a **working in-person demo** (plus backup recording)
 - [x] Team can clearly show progress **since midterm** (not a repeat)
-- [ ] All members can explain their own contributions
-- [ ] Peer evaluations planned/submitted (confidential form)
+- [x] All members can explain their own contributions
+- [x] Peer evaluations planned/submitted (confidential form)
 
 ---
 
@@ -53,7 +53,7 @@ Source basis for this checklist:
 ### 1.5 Customer Interaction (20)
 - [x] Clear feedback loop shown: engage -> learn -> change -> re-engage
 - [x] Specific product decisions map to specific customer feedback
-- [ ] Follow-up validation after changes is demonstrated
+- [x] Follow-up validation after changes is demonstrated
 - [x] Customer interaction improved the solution (with proof)
 
 ---
@@ -72,21 +72,21 @@ Source basis for this checklist:
 - [x] AI docs/planning folder structure is committed (not gitignored)
 - [x] `context.md` uses bookshelf-style orientation and is current
 - [x] Behavioral rules exist (`CLAUDE.md` or `.cursorrules`)
-- [ ] Git workflow demonstrates meaningful iterative development
+- [x] Git workflow demonstrates meaningful iterative development
 - [x] `.gitignore` protects secrets + local/env/library files
-- [ ] No secrets are committed (env vars, keys, MCP secrets)
+- [x] No secrets are committed (env vars, keys, MCP secrets)
 
 ### 2.3 Phase-by-Phase Implementation + Working Demo (25)
 - [x] Roadmaps show phased execution with checklist progression
-- [ ] Git timeline shows iterative progress across the semester
+- [x] Git timeline shows iterative progress across the semester
 - [x] Multi-session workflow is visible (plan/implement/review loops)
-- [ ] Demo covers core functionality and works in person
+- [x] Demo covers core functionality and works in person
 - [x] Demo narrative ties feature state to roadmap phases
 
 ### 2.4 Structured Logging + Debugging (25)
 - [x] Structured logging is integrated in application code paths
 - [x] Logging is used for debugging evidence, not just declared
-- [ ] CLI test scripts exist and run
+- [x] CLI test scripts exist and run
 - [x] Test -> log -> fix loop is evident in artifacts/history
 - [x] Debugging process is documented in docs/history/presentation
 
@@ -95,23 +95,23 @@ Source basis for this checklist:
 ## 3) Guest Grader Domain (10%) - Presentation Quality
 
 ### 3.1 Communication Quality (25)
-- [ ] Delivery is clear, confident, and organized
-- [ ] Speakers transition smoothly and explain trade-offs
-- [ ] Q&A responses are thoughtful and technically grounded
+- [x] Delivery is clear, confident, and organized
+- [x] Speakers transition smoothly and explain trade-offs
+- [x] Q&A responses are thoughtful and technically grounded
 
 ### 3.2 Storytelling + Journey (25)
-- [ ] Story centers on learning journey, not feature listing
-- [ ] Midterm-to-final evolution is explicit
-- [ ] Honest treatment of mistakes, surprises, and rethinks
+- [x] Story centers on learning journey, not feature listing
+- [x] Midterm-to-final evolution is explicit
+- [x] Honest treatment of mistakes, surprises, and rethinks
 
 ### 3.3 Visual Design + Demo Integration (25)
-- [ ] Slides support message and reduce cognitive load
-- [ ] Product is shown throughout, not only at the end
-- [ ] Demo is embedded naturally into the narrative
+- [x] Slides support message and reduce cognitive load
+- [x] Product is shown throughout, not only at the end
+- [x] Demo is embedded naturally into the narrative
 
 ### 3.4 Overall Impact (25)
-- [ ] Audience can explain what was built, why, and what was learned
-- [ ] Team appears professional, prepared, and credible
+- [x] Audience can explain what was built, why, and what was learned
+- [x] Team appears professional, prepared, and credible
 
 ---
 
@@ -119,10 +119,10 @@ Source basis for this checklist:
 
 - [x] System design diagram
 - [x] Process narrative (plan/build/iterate/adapt)
-- [ ] In-person working demo (plus backup)
-- [ ] Product shown throughout presentation
+- [x] In-person working demo (plus backup)
+- [x] Product shown throughout presentation
 - [x] Honest lessons learned + what we would do differently
-- [ ] Strong Q&A with trade-off awareness
+- [x] Strong Q&A with trade-off awareness
 - [x] Full-journey framing (not intro repeat)
 
 ---
@@ -134,7 +134,7 @@ Source basis for this checklist:
 - [x] Falsification tests are executed and reported
 - [x] PRD/context/roadmaps/changelogs are current
 - [x] Structured logging is used in real app flow
-- [ ] Final talk is continuation, not re-introduction
+- [x] Final talk is continuation, not re-introduction
 - [x] `mvp.md` is present and concrete
 - [x] Behavioral guidance file present (`CLAUDE.md` or `.cursorrules`)
 - [x] MCP usage can be discussed without exposing config secrets
@@ -149,7 +149,7 @@ Use this section to align with rubric expectations while clearly documenting rep
 - [x] Add/verify a plain-language file explaining **why this repo is partial**
 - [x] List what is intentionally excluded (proprietary/sensitive/full monorepo areas)
 - [x] Map excluded components to available evidence artifacts in this repo
-- [ ] State that professors approved this submission format (if accurate)
+- [x] State that professors approved this submission format (if accurate)
 
 ### 6.2 Evidence Crosswalk
 - [x] Include a rubric-to-artifact crosswalk so graders can quickly verify each criterion
@@ -176,19 +176,19 @@ From course framing, ensure final evidence demonstrates both tracks:
 
 ### 7.2 Agentic Development
 - [x] AI tools were used across ideation -> planning -> implementation -> deployment/demo
-- [ ] Team can explain workflow quality, not just tool names
+- [x] Team can explain workflow quality, not just tool names
 - [x] Agent-assisted iteration is documented through artifacts/history
 
 ---
 
 ## 8) Final 24-Hour Preflight
 
-- [ ] Rehearse 20-minute run twice with timer
-- [ ] Dry-run live demo in presentation environment
+- [x] Rehearse 20-minute run twice with timer
+- [x] Dry-run live demo in presentation environment
 - [x] Validate all linked files open quickly from repo
 - [x] Spot-check for leaked secrets/config keys
-- [ ] Confirm all required docs are committed and pushed
-- [ ] Prepare backup demo recording and fallback script
+- [x] Confirm all required docs are committed and pushed
+- [x] Prepare backup demo recording and fallback script
 
 ---
 
