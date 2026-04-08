@@ -1,40 +1,74 @@
-<svg width="1400" height="800" viewBox="0 0 1400 800" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 1400 800" xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+  <title>Before System Diagram</title>
+  <desc>Email-first workflow with multiple handoffs before documentation is published.</desc>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0b0f15"/>
-      <stop offset="100%" stop-color="#121a24"/>
+    <linearGradient id="beforeBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f1722" />
+      <stop offset="100%" stop-color="#0a1018" />
     </linearGradient>
-    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-      <path d="M0,0 L10,3 L0,6 Z" fill="#7dd3fc"/>
+    <linearGradient id="beforeCard" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#172131" />
+      <stop offset="100%" stop-color="#111a28" />
+    </linearGradient>
+    <marker id="beforeArrow" viewBox="0 0 10 10" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#fcae7b" />
     </marker>
     <style>
-      .title { fill: #f8fafc; font: 700 42px Inter, Segoe UI, sans-serif; }
-      .label { fill: #dbe4ef; font: 600 24px Inter, Segoe UI, sans-serif; }
-      .body { fill: #9fb0c4; font: 400 18px Inter, Segoe UI, sans-serif; }
-      .box { fill: #111a25; stroke: #7dd3fc; stroke-opacity: 0.45; stroke-width: 2; rx: 16; }
+      .title { fill: #f8fafc; font: 700 38px Inter, Segoe UI, sans-serif; }
+      .subtitle { fill: #fda678; font: 600 19px Inter, Segoe UI, sans-serif; letter-spacing: 0.06em; text-transform: uppercase; }
+      .node { fill: url(#beforeCard); stroke: #fb923c; stroke-width: 2; stroke-opacity: 0.52; }
+      .nodeTitle { fill: #ffedd5; font: 700 20px Inter, Segoe UI, sans-serif; }
+      .nodeText { fill: #cbd5e1; font: 400 16px Inter, Segoe UI, sans-serif; }
+      .loopText { fill: #fdba74; font: 600 16px Inter, Segoe UI, sans-serif; }
     </style>
   </defs>
 
-  <rect x="0" y="0" width="1400" height="800" fill="url(#bg)"/>
-  <text x="700" y="80" text-anchor="middle" class="title">Old System Diagram (Placeholder)</text>
+  <rect x="0" y="0" width="1400" height="800" fill="url(#beforeBg)" />
 
-  <rect x="120" y="230" width="320" height="220" class="box"/>
-  <text x="280" y="290" text-anchor="middle" class="label">User Questions</text>
-  <text x="280" y="330" text-anchor="middle" class="body">Questions come in</text>
-  <text x="280" y="360" text-anchor="middle" class="body">and are logged</text>
+  <text x="700" y="72" text-anchor="middle" class="title">Before: Email-Centric Documentation Loop</text>
+  <text x="700" y="106" text-anchor="middle" class="subtitle">many handoffs, slower closure</text>
 
-  <rect x="540" y="230" width="320" height="220" class="box"/>
-  <text x="700" y="290" text-anchor="middle" class="label">Unanswered Queue</text>
-  <text x="700" y="330" text-anchor="middle" class="body">System compiles all</text>
-  <text x="700" y="360" text-anchor="middle" class="body">unanswered questions</text>
+  <rect x="60" y="170" width="180" height="138" rx="14" ry="14" class="node" />
+  <text x="150" y="210" text-anchor="middle" class="nodeTitle">1) Ask</text>
+  <text x="150" y="238" text-anchor="middle" class="nodeText">Franchiser user</text>
+  <text x="150" y="261" text-anchor="middle" class="nodeText">asks question</text>
 
-  <rect x="960" y="230" width="320" height="220" class="box"/>
-  <text x="1120" y="290" text-anchor="middle" class="label">Manual Human Work</text>
-  <text x="1120" y="330" text-anchor="middle" class="body">A real person reviews</text>
-  <text x="1120" y="360" text-anchor="middle" class="body">and answers manually</text>
+  <rect x="270" y="170" width="180" height="138" rx="14" ry="14" class="node" />
+  <text x="360" y="210" text-anchor="middle" class="nodeTitle">2) Detect</text>
+  <text x="360" y="238" text-anchor="middle" class="nodeText">Gap identified</text>
+  <text x="360" y="261" text-anchor="middle" class="nodeText">as unanswered</text>
 
-  <line x1="440" y1="340" x2="540" y2="340" stroke="#7dd3fc" stroke-width="3" marker-end="url(#arrow)"/>
-  <line x1="860" y1="340" x2="960" y2="340" stroke="#7dd3fc" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="480" y="170" width="180" height="138" rx="14" ry="14" class="node" />
+  <text x="570" y="210" text-anchor="middle" class="nodeTitle">3) Notify</text>
+  <text x="570" y="238" text-anchor="middle" class="nodeText">Email sent to</text>
+  <text x="570" y="261" text-anchor="middle" class="nodeText">franchisee</text>
 
-  <text x="700" y="700" text-anchor="middle" class="body">Replace this placeholder with final vector/SVG diagram later</text>
+  <rect x="690" y="170" width="180" height="138" rx="14" ry="14" class="node" />
+  <text x="780" y="210" text-anchor="middle" class="nodeTitle">4) Approve</text>
+  <text x="780" y="238" text-anchor="middle" class="nodeText">Franchisee approves</text>
+  <text x="780" y="261" text-anchor="middle" class="nodeText">new document</text>
+
+  <rect x="900" y="170" width="180" height="138" rx="14" ry="14" class="node" />
+  <text x="990" y="210" text-anchor="middle" class="nodeTitle">5) Draft</text>
+  <text x="990" y="238" text-anchor="middle" class="nodeText">AI writes</text>
+  <text x="990" y="261" text-anchor="middle" class="nodeText">new document</text>
+
+  <rect x="1110" y="170" width="230" height="138" rx="14" ry="14" class="node" />
+  <text x="1225" y="210" text-anchor="middle" class="nodeTitle">6) Review + Approve</text>
+  <text x="1225" y="238" text-anchor="middle" class="nodeText">Franchisee receives via email</text>
+  <text x="1225" y="261" text-anchor="middle" class="nodeText">and approves document</text>
+
+  <rect x="560" y="474" width="280" height="138" rx="14" ry="14" class="node" />
+  <text x="700" y="514" text-anchor="middle" class="nodeTitle">7) Publish</text>
+  <text x="700" y="542" text-anchor="middle" class="nodeText">Document submitted</text>
+  <text x="700" y="565" text-anchor="middle" class="nodeText">and made available</text>
+
+  <line x1="240" y1="239" x2="270" y2="239" stroke="#fb923c" stroke-width="2.5" marker-end="url(#beforeArrow)" />
+  <line x1="450" y1="239" x2="480" y2="239" stroke="#fb923c" stroke-width="2.5" marker-end="url(#beforeArrow)" />
+  <line x1="660" y1="239" x2="690" y2="239" stroke="#fb923c" stroke-width="2.5" marker-end="url(#beforeArrow)" />
+  <line x1="870" y1="239" x2="900" y2="239" stroke="#fb923c" stroke-width="2.5" marker-end="url(#beforeArrow)" />
+  <line x1="1080" y1="239" x2="1110" y2="239" stroke="#fb923c" stroke-width="2.5" marker-end="url(#beforeArrow)" />
+  <path d="M1225 308 L1225 400 L700 400 L700 474" fill="none" stroke="#fb923c" stroke-width="2.5" marker-end="url(#beforeArrow)" />
+  <path d="M560 544 L315 544 L315 308" fill="none" stroke="#fb923c" stroke-width="2.5" stroke-dasharray="8 8" marker-end="url(#beforeArrow)" />
+  <text x="332" y="520" class="loopText">long feedback cycle</text>
 </svg>

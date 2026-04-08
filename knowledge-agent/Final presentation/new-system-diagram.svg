@@ -1,46 +1,83 @@
-<svg width="1400" height="800" viewBox="0 0 1400 800" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 1400 800" xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+  <title>New System Diagram</title>
+  <desc>UI-first knowledge loop with clear feedback, draft generation, review, and RAG re-indexing.</desc>
   <defs>
-    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#0a0f16"/>
-      <stop offset="100%" stop-color="#0f1a27"/>
+    <linearGradient id="newBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0e1825" />
+      <stop offset="100%" stop-color="#0a111a" />
     </linearGradient>
-    <marker id="arrow2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-      <path d="M0,0 L10,3 L0,6 Z" fill="#7dd3fc"/>
+    <linearGradient id="newCard" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#172538" />
+      <stop offset="100%" stop-color="#102032" />
+    </linearGradient>
+    <marker id="newArrow" viewBox="0 0 10 10" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#7dd3fc" />
     </marker>
     <style>
-      .title { fill: #f8fafc; font: 700 42px Inter, Segoe UI, sans-serif; }
-      .label { fill: #dbe4ef; font: 600 24px Inter, Segoe UI, sans-serif; }
-      .body { fill: #9fb0c4; font: 400 18px Inter, Segoe UI, sans-serif; }
-      .box { fill: #0f1c2b; stroke: #7dd3fc; stroke-opacity: 0.55; stroke-width: 2; rx: 16; }
+      .title { fill: #f8fafc; font: 700 38px Inter, Segoe UI, sans-serif; }
+      .subtitle { fill: #86efac; font: 600 19px Inter, Segoe UI, sans-serif; letter-spacing: 0.06em; text-transform: uppercase; }
+      .node { fill: url(#newCard); stroke: #7dd3fc; stroke-width: 2; stroke-opacity: 0.52; }
+      .nodeGreen { stroke: #34d399; stroke-opacity: 0.72; }
+      .nodeViolet { stroke: #a78bfa; stroke-opacity: 0.68; }
+      .nodeOrange { stroke: #f97316; stroke-opacity: 0.74; }
+      .nodeTitle { fill: #e6f3ff; font: 700 19px Inter, Segoe UI, sans-serif; }
+      .nodeText { fill: #c6d2e1; font: 400 15.5px Inter, Segoe UI, sans-serif; }
+      .loopText { fill: #86efac; font: 600 16px Inter, Segoe UI, sans-serif; }
     </style>
   </defs>
 
-  <rect x="0" y="0" width="1400" height="800" fill="url(#bg2)"/>
-  <text x="700" y="80" text-anchor="middle" class="title">New System Diagram (Placeholder)</text>
+  <rect x="0" y="0" width="1400" height="800" fill="url(#newBg)" />
 
-  <rect x="80" y="230" width="250" height="220" class="box"/>
-  <text x="205" y="290" text-anchor="middle" class="label">User Questions</text>
-  <text x="205" y="330" text-anchor="middle" class="body">Input from</text>
-  <text x="205" y="360" text-anchor="middle" class="body">franchise users</text>
+  <text x="700" y="72" text-anchor="middle" class="title">After: UI-Embedded Knowledge Builder System</text>
+  <text x="700" y="106" text-anchor="middle" class="subtitle">faster operator loop, visible feedback, better retrieval</text>
 
-  <rect x="390" y="230" width="260" height="220" class="box"/>
-  <text x="520" y="290" text-anchor="middle" class="label">AI Compile</text>
-  <text x="520" y="330" text-anchor="middle" class="body">Detects gaps and</text>
-  <text x="520" y="360" text-anchor="middle" class="body">groups themes</text>
+  <rect x="80" y="165" width="190" height="122" rx="14" ry="14" class="node" />
+  <text x="175" y="201" text-anchor="middle" class="nodeTitle">1) Ask</text>
+  <text x="175" y="226" text-anchor="middle" class="nodeText">Franchiser asks</text>
+  <text x="175" y="248" text-anchor="middle" class="nodeText">questions</text>
 
-  <rect x="710" y="230" width="260" height="220" class="box"/>
-  <text x="840" y="290" text-anchor="middle" class="label">AI Answers</text>
-  <text x="840" y="330" text-anchor="middle" class="body">Generates draft</text>
-  <text x="840" y="360" text-anchor="middle" class="body">docs automatically</text>
+  <rect x="305" y="165" width="190" height="122" rx="14" ry="14" class="node" />
+  <text x="400" y="201" text-anchor="middle" class="nodeTitle">2) Detect</text>
+  <text x="400" y="226" text-anchor="middle" class="nodeText">Gap identified</text>
+  <text x="400" y="248" text-anchor="middle" class="nodeText">in answer flow</text>
 
-  <rect x="1030" y="230" width="290" height="220" class="box"/>
-  <text x="1175" y="290" text-anchor="middle" class="label">Review + Publish</text>
-  <text x="1175" y="330" text-anchor="middle" class="body">Human QA, then</text>
-  <text x="1175" y="360" text-anchor="middle" class="body">save and re-index</text>
+  <rect x="530" y="165" width="190" height="122" rx="14" ry="14" class="node nodeGreen" />
+  <text x="625" y="201" text-anchor="middle" class="nodeTitle">3) Highlight</text>
+  <text x="625" y="226" text-anchor="middle" class="nodeText">Gap highlighted</text>
+  <text x="625" y="248" text-anchor="middle" class="nodeText">in UI</text>
 
-  <line x1="330" y1="340" x2="390" y2="340" stroke="#7dd3fc" stroke-width="3" marker-end="url(#arrow2)"/>
-  <line x1="650" y1="340" x2="710" y2="340" stroke="#7dd3fc" stroke-width="3" marker-end="url(#arrow2)"/>
-  <line x1="970" y1="340" x2="1030" y2="340" stroke="#7dd3fc" stroke-width="3" marker-end="url(#arrow2)"/>
+  <rect x="755" y="165" width="220" height="122" rx="14" ry="14" class="node nodeGreen" />
+  <text x="865" y="201" text-anchor="middle" class="nodeTitle">4) Trigger</text>
+  <text x="865" y="226" text-anchor="middle" class="nodeText">Franchisee clicks</text>
+  <text x="865" y="248" text-anchor="middle" class="nodeText">Generate Doc (per/bulk)</text>
 
-  <text x="700" y="700" text-anchor="middle" class="body">Replace this placeholder with final vector/SVG diagram later</text>
+  <rect x="1010" y="165" width="310" height="122" rx="14" ry="14" class="node nodeViolet" />
+  <text x="1165" y="201" text-anchor="middle" class="nodeTitle">5) AI Draft Generator</text>
+  <text x="1165" y="226" text-anchor="middle" class="nodeText">Creates KB draft</text>
+  <text x="1165" y="248" text-anchor="middle" class="nodeText">from clustered gaps</text>
+
+  <rect x="360" y="458" width="300" height="138" rx="14" ry="14" class="node nodeViolet" />
+  <text x="510" y="498" text-anchor="middle" class="nodeTitle">6) KB Editor Review</text>
+  <text x="510" y="525" text-anchor="middle" class="nodeText">Human review with</text>
+  <text x="510" y="547" text-anchor="middle" class="nodeText">source context</text>
+
+  <rect x="700" y="458" width="300" height="138" rx="14" ry="14" class="node nodeOrange" />
+  <text x="850" y="498" text-anchor="middle" class="nodeTitle">7) Save + Re-index</text>
+  <text x="850" y="525" text-anchor="middle" class="nodeText">Publish to RAG</text>
+  <text x="850" y="547" text-anchor="middle" class="nodeText">for future retrieval</text>
+
+  <rect x="1040" y="458" width="270" height="138" rx="14" ry="14" class="node nodeGreen" />
+  <text x="1175" y="498" text-anchor="middle" class="nodeTitle">8) Better Answers</text>
+  <text x="1175" y="525" text-anchor="middle" class="nodeText">Fewer repeat gaps</text>
+  <text x="1175" y="547" text-anchor="middle" class="nodeText">over time</text>
+
+  <line x1="270" y1="225" x2="305" y2="225" stroke="#7dd3fc" stroke-width="2.5" marker-end="url(#newArrow)" />
+  <line x1="495" y1="225" x2="530" y2="225" stroke="#7dd3fc" stroke-width="2.5" marker-end="url(#newArrow)" />
+  <line x1="720" y1="225" x2="755" y2="225" stroke="#7dd3fc" stroke-width="2.5" marker-end="url(#newArrow)" />
+  <line x1="975" y1="225" x2="1010" y2="225" stroke="#7dd3fc" stroke-width="2.5" marker-end="url(#newArrow)" />
+  <path d="M1165 287 L1165 390 L510 390 L510 458" fill="none" stroke="#7dd3fc" stroke-width="2.5" marker-end="url(#newArrow)" />
+  <line x1="660" y1="527" x2="700" y2="527" stroke="#7dd3fc" stroke-width="2.5" marker-end="url(#newArrow)" />
+  <line x1="1000" y1="527" x2="1040" y2="527" stroke="#7dd3fc" stroke-width="2.5" marker-end="url(#newArrow)" />
+  <path d="M1040 573 L950 645 L300 645 L175 287" fill="none" stroke="#34d399" stroke-width="2.5" stroke-dasharray="8 8" marker-end="url(#newArrow)" />
+  <text x="355" y="625" class="loopText">tight learning loop into future responses</text>
 </svg>

@@ -661,6 +661,37 @@
         max-height: 340px;
       }
 
+      .slide-system-diagrams h2 {
+        font-size: 1.28em;
+        margin-bottom: 0.22em;
+      }
+
+      .slide-system-diagrams .lede {
+        font-size: 0.67em;
+        line-height: 1.4;
+        margin-bottom: 0.36em;
+      }
+
+      .slide-system-diagrams .diagram-label {
+        font-size: 0.54em;
+        margin-bottom: 0.18em;
+      }
+
+      .slide-system-diagrams .diagram-duo {
+        gap: 0.5em;
+        margin-top: 0.28em;
+      }
+
+      .slide-system-diagrams .diagram-duo .slide-image {
+        max-height: 420px;
+      }
+
+      .slide-system-diagrams .caption {
+        font-size: 0.62em;
+        margin-top: 0.3em;
+        line-height: 1.35;
+      }
+
       .sf-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -1003,20 +1034,24 @@
         </section>
 
         <!-- 5 · System diagrams (evolve later) -->
-        <section class="accent-green">
+        <section class="accent-green slide-system-diagrams">
           <h3>Architecture</h3>
           <h2>System diagrams</h2>
-          
+          <p class="lede">
+            Shift from a <strong style="color: #fdba74">slow email handoff loop</strong>
+            to a <strong style="color: #6ee7b7">UI-embedded feedback loop</strong> with faster action and re-indexing.
+          </p>
           <div class="diagram-duo">
             <div>
               <p class="diagram-label">Earlier framing</p>
-              <img src="./old-system-diagram.svg" class="slide-image" alt="Earlier system diagram placeholder" />
+              <img src="./old-system-diagram.svg" class="slide-image" alt="Before system diagram showing email-based workflow" />
             </div>
             <div>
               <p class="diagram-label">Current framing</p>
-              <img src="./new-system-diagram.svg" class="slide-image" alt="Current system diagram placeholder" />
+              <img src="./new-system-diagram.svg" class="slide-image" alt="After system diagram showing UI-based generation workflow" />
             </div>
           </div>
+          
         </section>
 
         <!-- 6 · Problem -->
