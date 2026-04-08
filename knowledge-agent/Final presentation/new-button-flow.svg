@@ -1,0 +1,60 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="55%" stop-color="#07090d"/>
+      <stop offset="100%" stop-color="#07090d"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#111a26"/>
+      <stop offset="100%" stop-color="#0f141c"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#7dd3fc"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1280" height="720" fill="url(#bgGrad)"/>
+
+  <text x="70" y="80" fill="#f5f7fa" font-size="38" font-family="Segoe UI, Inter, Arial, sans-serif" font-weight="700">
+    New Workflow (Final): In-App Button-Driven Loop
+  </text>
+  <text x="70" y="115" fill="#9ca7b7" font-size="21" font-family="Segoe UI, Inter, Arial, sans-serif">
+    System change: trigger moved into product, closing the feedback loop faster
+  </text>
+
+  <rect x="80" y="170" rx="16" ry="16" width="230" height="120" fill="url(#cardGrad)" stroke="#7dd3fc" stroke-opacity="0.55"/>
+  <text x="195" y="218" text-anchor="middle" fill="#f5f7fa" font-size="20" font-family="Segoe UI, Inter, Arial, sans-serif" font-weight="600">Gap Signals</text>
+  <text x="195" y="245" text-anchor="middle" fill="#d1d8e3" font-size="16" font-family="Segoe UI, Inter, Arial, sans-serif">What Users Are Asking</text>
+
+  <rect x="360" y="170" rx="16" ry="16" width="250" height="120" fill="url(#cardGrad)" stroke="#34d399" stroke-opacity="0.78"/>
+  <text x="485" y="218" text-anchor="middle" fill="#f5f7fa" font-size="20" font-family="Segoe UI, Inter, Arial, sans-serif" font-weight="600">Generate Doc</text>
+  <text x="485" y="245" text-anchor="middle" fill="#d1d8e3" font-size="16" font-family="Segoe UI, Inter, Arial, sans-serif">Per-Gap or Bulk Button</text>
+
+  <rect x="650" y="170" rx="16" ry="16" width="250" height="120" fill="url(#cardGrad)" stroke="#a78bfa" stroke-opacity="0.75"/>
+  <text x="775" y="218" text-anchor="middle" fill="#f5f7fa" font-size="20" font-family="Segoe UI, Inter, Arial, sans-serif" font-weight="600">AI Draft Created</text>
+  <text x="775" y="245" text-anchor="middle" fill="#d1d8e3" font-size="16" font-family="Segoe UI, Inter, Arial, sans-serif">In AI Generated Folder</text>
+
+  <rect x="940" y="170" rx="16" ry="16" width="250" height="120" fill="url(#cardGrad)" stroke="#7dd3fc" stroke-opacity="0.75"/>
+  <text x="1065" y="218" text-anchor="middle" fill="#f5f7fa" font-size="20" font-family="Segoe UI, Inter, Arial, sans-serif" font-weight="600">KB Editor Review</text>
+  <text x="1065" y="245" text-anchor="middle" fill="#d1d8e3" font-size="16" font-family="Segoe UI, Inter, Arial, sans-serif">Source Questions Banner</text>
+
+  <rect x="520" y="390" rx="16" ry="16" width="260" height="125" fill="url(#cardGrad)" stroke="#f97316" stroke-opacity="0.8"/>
+  <text x="650" y="438" text-anchor="middle" fill="#f5f7fa" font-size="20" font-family="Segoe UI, Inter, Arial, sans-serif" font-weight="600">Save &amp; Re-index</text>
+  <text x="650" y="465" text-anchor="middle" fill="#d1d8e3" font-size="16" font-family="Segoe UI, Inter, Arial, sans-serif">Publishes to RAG Pipeline</text>
+
+  <rect x="860" y="390" rx="16" ry="16" width="290" height="125" fill="url(#cardGrad)" stroke="#34d399" stroke-opacity="0.78"/>
+  <text x="1005" y="438" text-anchor="middle" fill="#f5f7fa" font-size="20" font-family="Segoe UI, Inter, Arial, sans-serif" font-weight="600">Better Future Answers</text>
+  <text x="1005" y="465" text-anchor="middle" fill="#d1d8e3" font-size="16" font-family="Segoe UI, Inter, Arial, sans-serif">Fewer Repeat Gaps</text>
+
+  <line x1="310" y1="230" x2="360" y2="230" stroke="#7dd3fc" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="610" y1="230" x2="650" y2="230" stroke="#7dd3fc" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="900" y1="230" x2="940" y2="230" stroke="#7dd3fc" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="1030" y1="290" x2="730" y2="390" stroke="#7dd3fc" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="780" y1="452" x2="860" y2="452" stroke="#7dd3fc" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M 980 520 C 860 620, 360 610, 195 305" fill="none" stroke="#34d399" stroke-width="3" stroke-dasharray="9 8" marker-end="url(#arrow)"/>
+
+  <text x="760" y="610" fill="#34d399" font-size="18" font-family="Segoe UI, Inter, Arial, sans-serif" font-weight="600">
+    Closed loop: usage signal -&gt; action button -&gt; published knowledge -&gt; improved answers
+  </text>
+</svg>

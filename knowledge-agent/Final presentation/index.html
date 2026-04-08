@@ -31,17 +31,46 @@
         --accent-2: #a78bfa;
         --accent-3: #f97316;
         --accent-4: #34d399;
+        --accent-rose: #fb7185;
+        --accent-amber: #fbbf24;
         --accent-soft: rgba(125, 211, 252, 0.18);
         --border: rgba(255, 255, 255, 0.12);
       }
 
       .reveal {
         font-family: "Inter", "Segoe UI", system-ui, sans-serif;
-        background: radial-gradient(circle at 10% 10%, #111827 0%, var(--bg) 45%);
+        background: radial-gradient(ellipse 120% 80% at 20% -10%, #1e293b 0%, var(--bg) 50%),
+          radial-gradient(ellipse 80% 60% at 100% 100%, #1a1030 0%, transparent 45%),
+          var(--bg);
       }
 
       .reveal .slides section {
         text-align: left;
+      }
+
+      /* Per-slide tint + top accent strip */
+      .reveal .slides > section {
+        background: linear-gradient(
+          165deg,
+          color-mix(in srgb, var(--slide-tint, #1e293b) 42%, transparent) 0%,
+          rgba(7, 9, 13, 0.97) 52%
+        );
+        border-top: 3px solid var(--accent);
+        box-sizing: border-box;
+      }
+
+      .reveal .slides > section.slide-hero {
+        border-top-color: var(--accent-3);
+      }
+
+      .reveal .slides > section.accent-orange {
+        --slide-tint: rgba(249, 115, 22, 0.22);
+      }
+      .reveal .slides > section.accent-purple {
+        --slide-tint: rgba(167, 139, 250, 0.2);
+      }
+      .reveal .slides > section.accent-green {
+        --slide-tint: rgba(52, 211, 153, 0.18);
       }
 
       .reveal h1,
@@ -60,6 +89,7 @@
       .reveal h2 {
         font-size: 1.5em;
         margin-bottom: 0.4em;
+        color: #e8eef7;
       }
 
       .reveal h3 {
@@ -72,9 +102,29 @@
 
       .reveal p,
       .reveal li {
-        color: #d1d8e3;
+        color: #b8c5d6;
         font-size: 0.8em;
         line-height: 1.6;
+      }
+
+      .reveal strong {
+        color: #f0f4fa;
+        font-weight: 600;
+      }
+
+      .lede {
+        color: #a5b8ce;
+        font-size: 0.78em;
+        max-width: 920px;
+        margin: 0 0 0.6em;
+        line-height: 1.55;
+      }
+
+      .caption {
+        color: #8b9cb0;
+        font-size: 0.7em;
+        margin-top: 0.45em;
+        line-height: 1.45;
       }
 
       .reveal ul {
@@ -252,17 +302,639 @@
       .accent-green {
         --accent: var(--accent-4);
       }
+
+      /* Topic-only slides: presenters carry the narrative */
+      .topic-only {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        min-height: 520px;
+      }
+
+      .topic-only h1 {
+        margin: 0;
+        font-size: 2.5em;
+        max-width: 960px;
+        line-height: 1.12;
+      }
+
+      .compare-strip {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        gap: 0.5em;
+        align-items: center;
+        margin-top: 0.35em;
+      }
+
+      .compare-strip img {
+        width: 100%;
+        max-height: 420px;
+        object-fit: contain;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .compare-arrow {
+        font-size: 2em;
+        color: var(--accent-3);
+        font-weight: 700;
+        padding: 0 0.15em;
+      }
+
+      .email-ui-title {
+        margin-bottom: 0.25em;
+      }
+
+      .rag-only .slide-image {
+        max-height: 540px;
+      }
+
+      .problem-evolution {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        text-align: center;
+        max-width: 920px;
+        margin: 0.15em auto 0;
+        gap: 0.32em;
+        flex: 1 1 auto;
+        min-height: 0;
+      }
+
+      .problem-card {
+        position: relative;
+        border-radius: 12px;
+        padding: 0.5em 0.95em 0.58em;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28);
+        overflow: hidden;
+      }
+
+      .problem-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          circle at 12% 0%,
+          rgba(255, 255, 255, 0.08) 0%,
+          transparent 50%
+        );
+        pointer-events: none;
+      }
+
+      .problem-card-label {
+        position: relative;
+        margin: 0 0 0.28em;
+        font-size: 0.56em;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        color: rgba(245, 247, 250, 0.65);
+      }
+
+      .problem-card--before {
+        background: linear-gradient(
+          152deg,
+          rgba(251, 146, 60, 0.32) 0%,
+          rgba(234, 88, 12, 0.12) 42%,
+          rgba(7, 9, 13, 0.72) 100%
+        );
+        border-color: color-mix(in srgb, #fb923c 38%, transparent);
+        border-left: 4px solid #fb923c;
+      }
+
+      .problem-card--before .problem-card-label {
+        color: #fed7aa;
+      }
+
+      .problem-card--after {
+        background: linear-gradient(
+          152deg,
+          rgba(52, 211, 153, 0.3) 0%,
+          rgba(16, 185, 129, 0.1) 42%,
+          rgba(7, 9, 13, 0.72) 100%
+        );
+        border-color: color-mix(in srgb, #34d399 38%, transparent);
+        border-left: 4px solid #34d399;
+      }
+
+      .problem-card--after .problem-card-label {
+        color: #a7f3d0;
+      }
+
+      .problem-line-before {
+        position: relative;
+        font-size: 1.02em;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        color: #ffedd5;
+        margin: 0;
+        line-height: 1.22;
+        text-align: center;
+        max-width: none;
+        text-shadow: 0 1px 18px rgba(251, 146, 60, 0.35);
+      }
+
+      .problem-line-after {
+        position: relative;
+        font-size: 0.88em;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        color: #ecfdf5;
+        margin: 0;
+        line-height: 1.3;
+        max-width: none;
+        text-align: center;
+        text-shadow: 0 1px 18px rgba(52, 211, 153, 0.28);
+      }
+
+      .problem-connector {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        flex-shrink: 0;
+      }
+
+      .problem-connector-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        font-size: 0.95em;
+        font-weight: 700;
+        line-height: 1;
+        color: #e9d5ff;
+        background: linear-gradient(
+          145deg,
+          rgba(167, 139, 250, 0.45) 0%,
+          rgba(99, 102, 241, 0.2) 100%
+        );
+        border: 2px solid color-mix(in srgb, #c4b5fd 55%, transparent);
+        box-shadow:
+          0 0 0 1px rgba(0, 0, 0, 0.2),
+          0 8px 28px rgba(109, 40, 217, 0.25);
+      }
+
+      /* Fit problem evolution + headers in 1280×720 stage */
+      .slide-problem-evolution {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        box-sizing: border-box;
+        padding-bottom: 0.25em;
+      }
+
+      .slide-problem-evolution h3 {
+        margin-bottom: 0.06em;
+      }
+
+      .slide-problem-evolution h2 {
+        margin-top: 0;
+        margin-bottom: 0.22em;
+        font-size: 1.28em;
+        line-height: 1.12;
+      }
+
+      .slide-minimal h2 {
+        margin-bottom: 0.5em;
+      }
+
+      .slide-problem-evolution.slide-minimal h2 {
+        margin-bottom: 0.22em;
+      }
+
+      /* Three-column falsification timeline */
+      .slide-falsification {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        box-sizing: border-box;
+        padding-bottom: 0.2em;
+      }
+
+      .slide-falsification h3 {
+        margin-bottom: 0.06em;
+      }
+
+      .slide-falsification h1 {
+        font-size: 1.55em;
+        margin-top: 0;
+        margin-bottom: 0.38em;
+        line-height: 1.08;
+        max-width: 920px;
+      }
+
+      .falsification-row {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr auto 1fr;
+        gap: 0.35em 0.28em;
+        align-items: stretch;
+        flex: 1 1 auto;
+        min-height: 0;
+        max-width: 1120px;
+        margin-top: 0.05em;
+      }
+
+      .falsification-arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.35em;
+        font-weight: 700;
+        color: color-mix(in srgb, var(--accent) 70%, var(--muted));
+        opacity: 0.85;
+        padding: 0 0.02em;
+        user-select: none;
+      }
+
+      .falsification-block {
+        position: relative;
+        border-radius: 14px;
+        padding: 0.85em 0.75em 0.92em;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.11);
+        box-shadow:
+          0 10px 32px rgba(0, 0, 0, 0.38),
+          inset 0 1px 0 rgba(255, 255, 255, 0.06);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 168px;
+        overflow: hidden;
+      }
+
+      .falsification-block::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse 90% 55% at 50% 0%,
+          rgba(255, 255, 255, 0.14) 0%,
+          transparent 52%
+        );
+        pointer-events: none;
+      }
+
+      .falsification-block-title {
+        position: relative;
+        font-size: 0.95em;
+        font-weight: 750;
+        letter-spacing: -0.025em;
+        line-height: 1.18;
+        margin: 0;
+        z-index: 1;
+      }
+
+      .falsification-block--before {
+        background: linear-gradient(
+          165deg,
+          rgba(251, 146, 60, 0.38) 0%,
+          rgba(234, 88, 12, 0.12) 38%,
+          rgba(7, 9, 13, 0.88) 100%
+        );
+        border-color: color-mix(in srgb, #fb923c 44%, transparent);
+        border-top: 3px solid #fb923c;
+      }
+
+      .falsification-block--before .falsification-block-title {
+        color: #ffedd5;
+        text-shadow: 0 2px 20px rgba(251, 146, 60, 0.4);
+      }
+
+      .falsification-block--now {
+        background: linear-gradient(
+          165deg,
+          rgba(56, 189, 248, 0.36) 0%,
+          rgba(14, 165, 233, 0.12) 40%,
+          rgba(7, 9, 13, 0.88) 100%
+        );
+        border-color: color-mix(in srgb, #38bdf8 44%, transparent);
+        border-top: 3px solid #38bdf8;
+      }
+
+      .falsification-block--now .falsification-block-title {
+        color: #e0f2fe;
+        text-shadow: 0 2px 22px rgba(56, 189, 248, 0.38);
+      }
+
+      .falsification-block--later {
+        background: linear-gradient(
+          165deg,
+          rgba(167, 139, 250, 0.4) 0%,
+          rgba(99, 102, 241, 0.14) 42%,
+          rgba(7, 9, 13, 0.88) 100%
+        );
+        border-color: color-mix(in srgb, #a78bfa 46%, transparent);
+        border-top: 3px solid #c4b5fd;
+      }
+
+      .falsification-block--later .falsification-block-title {
+        color: #ede9fe;
+        text-shadow: 0 2px 22px rgba(167, 139, 250, 0.42);
+      }
+
+      .diagram-duo {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75em;
+        margin-top: 0.45em;
+        align-items: start;
+      }
+
+      .diagram-label {
+        font-size: 0.62em;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--accent-amber);
+        margin-bottom: 0.25em;
+      }
+
+      .diagram-duo .slide-image {
+        max-height: 340px;
+      }
+
+      .sf-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.85em;
+        margin-top: 0.45em;
+      }
+
+      .sf-col {
+        padding: 0.75em 0.9em;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .sf-col h4 {
+        margin: 0 0 0.45em;
+        font-size: 0.72em;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+
+      .sf-col.win {
+        background: linear-gradient(
+          135deg,
+          rgba(52, 211, 153, 0.12) 0%,
+          rgba(52, 211, 153, 0.04) 100%
+        );
+        border-left: 4px solid var(--accent-4);
+      }
+
+      .sf-col.win h4 {
+        color: var(--accent-4);
+      }
+
+      .sf-col.lose {
+        background: linear-gradient(
+          135deg,
+          rgba(251, 113, 133, 0.12) 0%,
+          rgba(251, 113, 133, 0.04) 100%
+        );
+        border-left: 4px solid var(--accent-rose);
+      }
+
+      .sf-col.lose h4 {
+        color: var(--accent-rose);
+      }
+
+      .sf-col ul {
+        margin: 0;
+        padding-left: 1.15em;
+      }
+
+      .sf-col li {
+        font-size: 0.74em;
+        color: #b9cad8;
+        margin-bottom: 0.28em;
+      }
+
+      /* Success & failure: fit two-column criteria without clipping (1280×720 stage) */
+      .slide-metrics h3 {
+        margin-bottom: 0.1em;
+      }
+
+      .slide-metrics h2 {
+        margin-bottom: 0.18em;
+      }
+
+      .slide-metrics .lede {
+        margin-bottom: 0.35em;
+        line-height: 1.45;
+      }
+
+      .slide-metrics .sf-grid {
+        margin-top: 0.2em;
+        gap: 0.65em;
+        align-items: start;
+      }
+
+      .slide-metrics .sf-col {
+        padding: 0.55em 0.75em;
+      }
+
+      .slide-metrics .sf-col h4 {
+        margin: 0 0 0.32em;
+      }
+
+      .slide-metrics .sf-col ul {
+        margin: 0;
+      }
+
+      .slide-metrics .sf-col li {
+        margin-bottom: 0.16em;
+        line-height: 1.42;
+      }
+
+      .topic-with-detail .topic-only {
+        min-height: auto;
+        justify-content: flex-start;
+        align-items: flex-start;
+        text-align: left;
+      }
+
+      .topic-with-detail .topic-only h1 {
+        font-size: 2.05em;
+        margin-bottom: 0.35em;
+      }
+
+      .demo-slide {
+        background: radial-gradient(
+          circle at 50% 30%,
+          rgba(249, 115, 22, 0.15) 0%,
+          transparent 55%
+        ) !important;
+      }
+
+      .demo-slide .big-demo {
+        background: linear-gradient(90deg, #f97316, #fbbf24, #fb923c);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      /* Client logos: readable on dark slides (dark slot vs light mat) */
+      .client-logo-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.65em;
+        margin-top: 0.45em;
+      }
+
+      .client-logo-slot {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 112px;
+        padding: 0.7em 1em;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: linear-gradient(
+          160deg,
+          rgba(30, 41, 59, 0.95) 0%,
+          rgba(15, 23, 42, 0.98) 100%
+        );
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+      }
+
+      .client-logo-slot.mat-light {
+        background: linear-gradient(165deg, #f8fafc 0%, #e2e8f0 55%, #cbd5e1 100%);
+        border-color: rgba(15, 23, 42, 0.12);
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+      }
+
+      .client-logo-slot img {
+        display: block;
+        max-width: 100%;
+        max-height: 76px;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35));
+      }
+
+      .client-logo-slot.mat-light img {
+        filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.15));
+      }
+
+      /* Plans for the future: four-up colorful tiles */
+      .slide-future-plans {
+        --slide-tint: rgba(99, 102, 241, 0.14);
+        --accent: #a5b4fc;
+      }
+
+      .slide-future-plans h2 {
+        margin-bottom: 0.4em;
+      }
+
+      .future-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8em;
+        margin-top: 0.15em;
+      }
+
+      .future-tile {
+        position: relative;
+        border-radius: 14px;
+        padding: 0.95em 1.05em;
+        min-height: 148px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        box-shadow: 0 10px 36px rgba(0, 0, 0, 0.35);
+        overflow: hidden;
+      }
+
+      .future-tile::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        opacity: 0.55;
+        background: radial-gradient(
+          circle at 20% 20%,
+          rgba(255, 255, 255, 0.16) 0%,
+          transparent 45%
+        );
+        pointer-events: none;
+      }
+
+      .future-tile h4 {
+        position: relative;
+        margin: 0;
+        font-size: 1.05em;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        line-height: 1.28;
+        color: #f8fafc;
+        max-width: 280px;
+      }
+
+      .future-tile--cyan {
+        background: linear-gradient(
+          155deg,
+          rgba(34, 211, 238, 0.35) 0%,
+          rgba(8, 145, 178, 0.12) 45%,
+          rgba(7, 9, 13, 0.65) 100%
+        );
+        border-color: color-mix(in srgb, #22d3ee 42%, transparent);
+        border-left: 4px solid #22d3ee;
+      }
+
+      .future-tile--violet {
+        background: linear-gradient(
+          155deg,
+          rgba(167, 139, 250, 0.38) 0%,
+          rgba(109, 40, 217, 0.14) 45%,
+          rgba(7, 9, 13, 0.65) 100%
+        );
+        border-color: color-mix(in srgb, #a78bfa 42%, transparent);
+        border-left: 4px solid #a78bfa;
+      }
+
+      .future-tile--sunset {
+        background: linear-gradient(
+          155deg,
+          rgba(251, 146, 60, 0.4) 0%,
+          rgba(234, 88, 12, 0.15) 45%,
+          rgba(7, 9, 13, 0.65) 100%
+        );
+        border-color: color-mix(in srgb, #fb923c 42%, transparent);
+        border-left: 4px solid #fb923c;
+      }
+
+      .future-tile--jade {
+        background: linear-gradient(
+          155deg,
+          rgba(52, 211, 153, 0.36) 0%,
+          rgba(16, 185, 129, 0.12) 45%,
+          rgba(7, 9, 13, 0.65) 100%
+        );
+        border-color: color-mix(in srgb, #34d399 42%, transparent);
+        border-left: 4px solid #34d399;
+      }
     </style>
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
-        <!-- 1 -->
-        <section class="accent-orange">
+        <!-- 1 · Title -->
+        <section class="accent-orange slide-hero">
           <div class="hero">
             <p class="kicker">IS 590R · Winter 2026</p>
             <h1>Frantelligence Final Presentation</h1>
-            <p class="subtitle">Knowledge Builder Agent · Final Deliverable</p>
+            <p class="subtitle"><span style="color: #fdba74">Knowledge Builder Agent</span> · capstone deliverable</p>
             <img
               src="./lovable-uploads/f3eb529b-177c-4912-a6a7-552b9aff0517.png"
               class="brand-wordmark"
@@ -271,156 +943,258 @@
           </div>
         </section>
 
-        <!-- 2 -->
-        <section class="accent-purple">
-          <h3>Midterm to final delta</h3>
-          <div class="slide-head">
-            <h2>What Changed Since Midterm (Explicitly)</h2>
-            <img
-              src="./lovable-uploads/d414fd16-dec6-430d-8b0a-443b0de42a20.png"
-              class="brand-icon"
-              alt="Frantelligence mark"
-            />
+        <!-- 2 · Continuation (not a repeat midterm deck) -->
+        <section class="accent-purple topic-with-detail">
+          <h3>Journey</h3>
+          <div class="topic-only" style="min-height: 0; margin-bottom: 0.5em">
+            <h1 style="text-align: left">Changes since last we met</h1>
           </div>
+          
           <div class="evolution-grid">
             <div class="evo-box">
               <p>
-                <strong>Concept -> working closed loop:</strong> What Users Are Asking -> Generate
-                Doc -> KB editor -> Save &amp; Re-index.
+                <strong style="color: #fcd34d">Email Based to UI-First</strong>
               </p>
             </div>
             <div class="evo-box">
               <p>
-                <strong>Email-first -> in-app action:</strong> interviews and falsification made
-                generation button-driven in product; email became secondary.
+                <strong style="color: #7dd3fc">Problem Statement</strong>
               </p>
             </div>
             <div class="evo-box">
               <p>
-                <strong>Bulk assumption -> per-gap generation:</strong> now per-card Generate Doc +
-                optional bulk for intentional batches.
+                <strong style="color: #f9a8d4">Per-gap + bulk</strong>
               </p>
             </div>
             <div class="evo-box">
               <p>
-                <strong>System model matured:</strong> from basic RAG flow to a usage-signal
-                feedback flywheel that improves KB quality.
+                <strong style="color: #6ee7b7">RAG Agent Flow</strong>
               </p>
             </div>
           </div>
+        </section>
+
+        <!-- 3 · UX pivot -->
+        <section class="accent-orange slide-minimal">
+          <h3>Product</h3>
+          <h2 class="email-ui-title">From email → button</h2>
+          <p class="lede">
+            Interviews and falsification pushed us off a <strong style="color: #fca5a5">weekly-digest mental model</strong>.
+            Operators wanted to act where they already work.
+          </p>
+          <div class="compare-strip">
+            <img src="./slide-assets/email-inbox-burden.png" alt="Heavy email inbox" />
+            <span class="compare-arrow" aria-hidden="true">→</span>
+            <img src="./slide-assets/generate-doc-ui.png" alt="Generate Doc in product UI" />
+          </div>
+          <p class="caption">
+            Left: coordination and noise. Right: same signal, <strong style="color: #fdba74">immediate in-app action</strong>.
+          </p>
+        </section>
+
+        <!-- 4 · RAG + flywheel -->
+        <section class="accent-green rag-only">
+          <h3>System</h3>
+          <h2>AI Agent - RAG</h2>
+          <p class="lede">
+           <strong style="color: #6ee7b7">retrieve → answer → learn from gaps → publish → better retrieval</strong>.
+          </p>
+          <img src="./rag-agent-flow.svg" class="slide-image" alt="RAG and knowledge flywheel diagram" />
+        </section>
+
+        <!-- 5 · System diagrams (evolve later) -->
+        <section class="accent-green">
+          <h3>Architecture</h3>
+          <h2>System diagrams</h2>
           
-        </section>
-
-        <!-- 3 -->
-        <section class="accent-green">
-          <h3>System understanding</h3>
-          <h2>Old System Diagram</h2>
-          <img src="./old-system-diagram.svg" class="slide-image" alt="Old system diagram placeholder" />
-          <p class="mini">
-            Old model: unanswered questions were compiled, then answered manually by a human.
-          </p>
-        </section>
-
-        <!-- 4 -->
-        <section class="accent-green">
-          <h3>System understanding</h3>
-          <h2>New System Diagram</h2>
-          <img src="./new-system-diagram.svg" class="slide-image" alt="New system diagram placeholder" />
-          <p class="mini">
-            New model: AI compiles and drafts answers automatically, with human review before
-            publish.
-          </p>
-        </section>
-
-        <!-- 5 -->
-        <section class="accent-purple">
-          <img src="./falsification-stages.svg" class="slide-image" alt="Falsification stages diagram" />
-        </section>
-
-        <!-- 6 -->
-        <section class="accent-orange">
-          <h3>Customer interaction</h3>
-          <h2>Client Voice That Shaped the Build</h2>
-          <div class="quote-card">
-            <p class="quote-text">
-              "Pain around creating trainings, tracking access, and circulating documents across
-              the brand made the gap-detection plus auto-draft workflow immediately compelling."
-            </p>
-            <p class="mini">Interview summary: Rachel Bridges, operations training, Planet Fitness (Feb 2026).</p>
-            <span class="org-badge">Planet Fitness (logo placeholder)</span>
-          </div>
-          <div class="chip-row">
-            <span class="chip">Beyond friends/family</span>
-            <span class="chip">Engage -> learn -> change</span>
-            <span class="chip">Product decisions traced to feedback</span>
+          <div class="diagram-duo">
+            <div>
+              <p class="diagram-label">Earlier framing</p>
+              <img src="./old-system-diagram.svg" class="slide-image" alt="Earlier system diagram placeholder" />
+            </div>
+            <div>
+              <p class="diagram-label">Current framing</p>
+              <img src="./new-system-diagram.svg" class="slide-image" alt="Current system diagram placeholder" />
+            </div>
           </div>
         </section>
 
-        <!-- 7 -->
-        <section class="accent-orange">
-          <div class="centered">
-            <p class="kicker">Demo moment</p>
-            <h1 class="big-demo">Live Demo</h1>
-            <p class="subtitle">We will leave the slides and come back after demo.</p>
+        <!-- 6 · Problem -->
+        <section class="accent-purple slide-minimal slide-problem-evolution">
+          <h3>Problem</h3>
+          <h2>Problem statement evolution</h2>
+          <div class="problem-evolution">
+            <div class="problem-card problem-card--before fragment">
+              <p class="problem-card-label">Earlier framing</p>
+              <p class="problem-line-before">Solve Missing Documentation Problem</p>
+            </div>
+            <div class="problem-connector fragment" aria-hidden="true">
+              <span class="problem-connector-icon">↓</span>
+            </div>
+            <div class="problem-card problem-card--after fragment">
+              <p class="problem-card-label">Current framing</p>
+              <p class="problem-line-after">
+                Detect answer gaps and reduce time from signal to publishable documentation
+              </p>
+            </div>
           </div>
-        </section>
-
-        <!-- 8 -->
-        <section class="accent-green">
-          <h3>Agent architecture</h3>
-          <h2>How the AI Agent Uses RAG</h2>
-          <img src="./rag-agent-flow.svg" class="slide-image" alt="RAG flow diagram for knowledge builder" />
-        </section>
-
-        <!-- 9 -->
-        <section class="accent-purple">
-          <h3>Technical process</h3>
-          <h2>PRD -> MVP -> Plan -> Roadmap -> Code</h2>
-          <div class="chip-row">
-            <span class="chip">PRD anchor</span>
-            <span class="chip">MVP scope</span>
-            <span class="chip">Roadmap phases</span>
-            <span class="chip">Iterative implementation</span>
-            <span class="chip">Living documents</span>
-          </div>
-          <div class="panel">
+          <aside class="notes">
             <p>
-              Quick proof slide: we used document-driven development and AI-assisted iteration.
-              We will reference artifacts directly without lingering here.
+              We sharpened the problem: not just “docs are missing,” but surfacing where answers fail and
+              shortening the path from that signal to something publishable—measurable and operator-aligned.
             </p>
+          </aside>
+        </section>
+
+        <!-- 7 · Falsification -->
+        <section class="accent-purple slide-falsification slide-minimal">
+          <h3>Validation</h3>
+          <h1>We falsify assumptions—in stages</h1>
+          <div class="falsification-row">
+            <div class="falsification-block falsification-block--before">
+              <p class="falsification-block-title">Falsification Before</p>
+            </div>
+            <div class="falsification-arrow fragment" aria-hidden="true">→</div>
+            <div class="falsification-block falsification-block--now fragment">
+              <p class="falsification-block-title">Falsification Now</p>
+            </div>
+            <div class="falsification-arrow fragment" aria-hidden="true">→</div>
+            <div class="falsification-block falsification-block--later fragment">
+              <p class="falsification-block-title">Falsification Later</p>
+            </div>
+          </div>
+          <aside class="notes">
+            <p>
+              <strong>Before:</strong> Pitched early to clients—confirm the pain is real and worth solving.
+              <strong>Now:</strong> Built and exercised in the current system—confirm it works without breaking
+              core flows. <strong>Later:</strong> Proof shifts to real usage—adoption and whether generated docs
+              actually get used.
+            </p>
+          </aside>
+        </section>
+
+        <!-- 8 · Customers -->
+        <section class="accent-orange slide-minimal">
+          <h3>Customers</h3>
+          <h2>Thoughts from our clients</h2>
+          <div class="client-logo-grid" role="list" aria-label="Client and prospect brands">
+            <div class="client-logo-slot" role="listitem">
+              <img src="./client-logos/planet-fitness.png" alt="Planet Fitness" />
+            </div>
+            <div class="client-logo-slot" role="listitem">
+              <img src="./client-logos/ultimate-ninjas.png" alt="Ultimate Ninjas" />
+            </div>
+            <div class="client-logo-slot mat-light" role="listitem">
+              <img src="./client-logos/bricks-minifigs.png" alt="Bricks and Minifigs" />
+            </div>
+            <div class="client-logo-slot mat-light" role="listitem">
+              <img src="./client-logos/preloved.png" alt="Preloved" />
+            </div>
+            <div class="client-logo-slot mat-light" role="listitem">
+              <img src="./client-logos/best-life-brands.png" alt="Best Life Brands" />
+            </div>
+            <div class="client-logo-slot" role="listitem">
+              <img src="./client-logos/burn-boot-camp.png" alt="Burn Boot Camp" />
+            </div>
+          </div>
+
+        </section>
+
+        <!-- 9 · Demo -->
+        <section class="accent-orange slide-hero demo-slide">
+          <div class="centered">
+            <p class="kicker">Evidence</p>
+            <h1 class="big-demo">Live demo</h1>
+            
           </div>
         </section>
 
-        <!-- 10 -->
-        <section class="accent-green">
-          <h3>Debugging discipline</h3>
-          <h2>Structured Logging + Test-Log-Fix Loop</h2>
-          <ul>
-            <li>Structured logs are integrated in real application paths</li>
-            <li>CLI test scripts support fast verification and clear exit behavior</li>
-            <li>Debugging loop: run tests -> inspect logs -> fix -> re-run</li>
-            <li>Process evidence is tracked across docs and changelog history</li>
-          </ul>
-        </section>
-
-        <!-- 11 -->
+        <!-- 10 · Docs / process -->
         <section class="accent-purple">
-          <h3>Success and failure planning</h3>
-          <h2>Where We Stand Right Now</h2>
+          <h3>Process</h3>
+          <h2>Document-driven development</h2>
+          <p class="lede">Concrete scope stays in <strong style="color: #c4b5fd">MVP</strong>; vision stays in the <strong style="color: #7dd3fc">PRD</strong>. Plans age; we update them.</p>
           <ul>
-            <li>Working generated-doc flow is implemented and demoable</li>
-            <li>Pre and during falsification stages are validated</li>
-            <li>Post/future falsification depends on sustained client adoption</li>
-            <li>Next gate: measure whether generated docs are actually used</li>
+            <li><strong style="color: #7dd3fc">PRD</strong> — product anchor the team can build from</li>
+            <li><strong style="color: #c4b5fd">mvp.md</strong> — what “done” means for this course slice</li>
+            <li><strong style="color: #fde68a">Roadmaps</strong> — phased checklists tied to shipped work</li>
+            <li><strong style="color: #6ee7b7">Changelog</strong> — dated decisions (AI-assisted iteration, not one-shot)</li>
+            <li><strong style="color: #fcd34d">Ai Skills</strong> — repeatable skills to ensure consistency</li>
           </ul>
         </section>
 
-        <!-- 12 -->
-        <section class="accent-orange">
+        <!-- 11 · Logging -->
+        <section class="accent-green">
+          <h3>Engineering</h3>
+          <h2>Logging &amp; debugging</h2>
+          <p class="lede">
+            <strong style="color: #6ee7b7">Structured logs</strong> on real paths, not only a logger module on the shelf.
+          </p>
+          <ul>
+            <li>CLI / tests with <strong style="color: #fcd34d">clear exit codes</strong> for grading and automation</li>
+            <li><strong style="color: #7dd3fc">Test → log → fix</strong> loop documented in history and artifacts</li>
+            <li>Secrets stay out of the repo; <strong style="color: #fda4af">behavior rules</strong> in CLAUDE.md / Cursor</li>
+          </ul>
+        </section>
+
+        <!-- 12 · Success & failure -->
+        <section class="accent-purple slide-metrics">
+          <h3>Metrics</h3>
+          <h2>Success &amp; failure criteria</h2>
+          <p class="lede">Grounded in <code style="color: #a5b4fc">docs/success-failure-criteria.md</code> — honest about what this pack can prove vs live product data.</p>
+          <div class="sf-grid">
+            <div class="sf-col win">
+              <h4>Signals we want</h4>
+              <ul>
+                <li><strong>Draft → publish</strong> — reviewed, published, then used by clients</li>
+                <li><strong>Quicker time to close a gap</strong> — faster from signal to published doc</li>
+                <li><strong>Draft publish rate</strong> — more knowledge gaps are closed regularly</li>
+              </ul>
+            </div>
+            <div class="sf-col lose">
+              <h4>Pivots / Future Gates</h4>
+              <ul>
+                <li><strong>Email-primary</strong> — de-emphasized after falsification; in-app is primary</li>
+                <li><strong>Instrumentation</strong> — need clear metric owners and company-scoped analytics in pilots</li>
+                
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- 13 · Plans for the future -->
+        <section class="slide-future-plans">
+          <h3>Roadmap</h3>
+          <h2>Plans for the Future</h2>
+          <div class="future-grid" role="list" aria-label="Upcoming focus areas">
+            <div class="future-tile future-tile--cyan fragment" role="listitem">
+              <h4>Further Client Testing</h4>
+            </div>
+            <div class="future-tile future-tile--violet fragment" role="listitem">
+              <h4>Further Metrics Building</h4>
+            </div>
+            <div class="future-tile future-tile--sunset fragment" role="listitem">
+              <h4>Official Deployment</h4>
+            </div>
+            <div class="future-tile future-tile--jade fragment" role="listitem">
+              <h4>Track Success</h4>
+            </div>
+          </div>
+          <aside class="notes">
+            <p>
+              Four beats: deepen pilot feedback with real operators; harden company-scoped analytics and
+              the metrics we previewed; move from demo path to production deployment; then close the loop—watch
+              draft-to-publish and gap-close time so “success” isn’t anecdotal.
+            </p>
+          </aside>
+        </section>
+
+        <!-- 14 · Close -->
+        <section class="accent-orange slide-hero">
           <div class="hero">
-            <p class="kicker">Final reflection</p>
-            <h1>Process Quality Drives Product Quality</h1>
-            <p class="subtitle">Questions?</p>
+            <p class="kicker">What we learned</p>
+            <h1>The Journey so Far</h1>
+            <p class="subtitle" style="color: #cbd5e1">Questions?</p>
             <img
               src="./lovable-uploads/f3eb529b-177c-4912-a6a7-552b9aff0517.png"
               class="brand-wordmark"

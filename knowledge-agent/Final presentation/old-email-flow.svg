@@ -1,0 +1,60 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="55%" stop-color="#07090d"/>
+      <stop offset="100%" stop-color="#07090d"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#111a26"/>
+      <stop offset="100%" stop-color="#0f141c"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#7dd3fc"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1280" height="720" fill="url(#bgGrad)"/>
+
+  <text x="70" y="80" fill="#f5f7fa" font-size="38" font-family="Segoe UI, Inter, Arial, sans-serif" font-weight="700">
+    Old Workflow (Midterm-Era): Email-Driven Action
+  </text>
+  <text x="70" y="115" fill="#9ca7b7" font-size="21" font-family="Segoe UI, Inter, Arial, sans-serif">
+    System change context: action trigger lived outside the app (in inbox behavior)
+  </text>
+
+  <rect x="80" y="180" rx="16" ry="16" width="220" height="120" fill="url(#cardGrad)" stroke="#7dd3fc" stroke-opacity="0.55"/>
+  <text x="190" y="228" text-anchor="middle" fill="#f5f7fa" font-size="20" font-family="Segoe UI, Inter, Arial, sans-serif" font-weight="600">Gap Signals</text>
+  <text x="190" y="255" text-anchor="middle" fill="#d1d8e3" font-size="16" font-family="Segoe UI, Inter, Arial, sans-serif">Unanswered Questions</text>
+
+  <rect x="370" y="180" rx="16" ry="16" width="250" height="120" fill="url(#cardGrad)" stroke="#a78bfa" stroke-opacity="0.7"/>
+  <text x="495" y="228" text-anchor="middle" fill="#f5f7fa" font-size="20" font-family="Segoe UI, Inter, Arial, sans-serif" font-weight="600">Weekly Digest</text>
+  <text x="495" y="255" text-anchor="middle" fill="#d1d8e3" font-size="16" font-family="Segoe UI, Inter, Arial, sans-serif">Email Sent to Admin</text>
+
+  <rect x="700" y="180" rx="16" ry="16" width="250" height="120" fill="url(#cardGrad)" stroke="#f97316" stroke-opacity="0.75"/>
+  <text x="825" y="228" text-anchor="middle" fill="#f5f7fa" font-size="20" font-family="Segoe UI, Inter, Arial, sans-serif" font-weight="600">Inbox Triage</text>
+  <text x="825" y="255" text-anchor="middle" fill="#d1d8e3" font-size="16" font-family="Segoe UI, Inter, Arial, sans-serif">Open / Ignore / Delay</text>
+
+  <rect x="1020" y="180" rx="16" ry="16" width="190" height="120" fill="url(#cardGrad)" stroke="#34d399" stroke-opacity="0.7"/>
+  <text x="1115" y="228" text-anchor="middle" fill="#f5f7fa" font-size="20" font-family="Segoe UI, Inter, Arial, sans-serif" font-weight="600">Manual Start</text>
+  <text x="1115" y="255" text-anchor="middle" fill="#d1d8e3" font-size="16" font-family="Segoe UI, Inter, Arial, sans-serif">Open App Later</text>
+
+  <rect x="370" y="400" rx="16" ry="16" width="250" height="120" fill="url(#cardGrad)" stroke="#7dd3fc" stroke-opacity="0.55"/>
+  <text x="495" y="448" text-anchor="middle" fill="#f5f7fa" font-size="20" font-family="Segoe UI, Inter, Arial, sans-serif" font-weight="600">Draft Creation</text>
+  <text x="495" y="475" text-anchor="middle" fill="#d1d8e3" font-size="16" font-family="Segoe UI, Inter, Arial, sans-serif">Often Delayed</text>
+
+  <rect x="700" y="400" rx="16" ry="16" width="250" height="120" fill="url(#cardGrad)" stroke="#7dd3fc" stroke-opacity="0.55"/>
+  <text x="825" y="448" text-anchor="middle" fill="#f5f7fa" font-size="20" font-family="Segoe UI, Inter, Arial, sans-serif" font-weight="600">KB Review</text>
+  <text x="825" y="475" text-anchor="middle" fill="#d1d8e3" font-size="16" font-family="Segoe UI, Inter, Arial, sans-serif">Editor + Publish</text>
+
+  <line x1="300" y1="240" x2="370" y2="240" stroke="#7dd3fc" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="620" y1="240" x2="700" y2="240" stroke="#7dd3fc" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="950" y1="240" x2="1020" y2="240" stroke="#7dd3fc" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="1115" y1="300" x2="520" y2="400" stroke="#7dd3fc" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="620" y1="460" x2="700" y2="460" stroke="#7dd3fc" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <text x="1030" y="355" fill="#9ca7b7" font-size="15" font-family="Segoe UI, Inter, Arial, sans-serif">high friction handoff</text>
+  <text x="70" y="650" fill="#f97316" font-size="19" font-family="Segoe UI, Inter, Arial, sans-serif" font-weight="600">
+    Pain point: if the email is skipped, the gap-fix workflow stalls.
+  </text>
+</svg>

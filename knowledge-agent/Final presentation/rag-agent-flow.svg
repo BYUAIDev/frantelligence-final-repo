@@ -57,9 +57,9 @@
   <line x1="950" y1="310" x2="1010" y2="310" stroke="#7dd3fc" stroke-width="4" marker-end="url(#rar)"/>
   <line x1="1270" y1="310" x2="1330" y2="310" stroke="#7dd3fc" stroke-width="4" marker-end="url(#rar)"/>
 
-  <line x1="1430" y1="400" x2="1430" y2="500" stroke="#7dd3fc" stroke-width="3"/>
-  <line x1="1430" y1="500" x2="1080" y2="500" stroke="#7dd3fc" stroke-width="3"/>
-  <line x1="1080" y1="500" x2="1080" y2="540" stroke="#7dd3fc" stroke-width="3" marker-end="url(#rar)"/>
+  <line x1="1430" y1="400" x2="1430" y2="470" stroke="#7dd3fc" stroke-width="3"/>
+  <line x1="1430" y1="470" x2="800" y2="470" stroke="#7dd3fc" stroke-width="3"/>
+  <line x1="800" y1="470" x2="800" y2="540" stroke="#7dd3fc" stroke-width="3" marker-end="url(#rar)"/>
 
   <line x1="520" y1="650" x2="210" y2="650" stroke="#7dd3fc" stroke-width="3"/>
   <line x1="210" y1="650" x2="210" y2="400" stroke="#7dd3fc" stroke-width="3" marker-end="url(#rar)"/>
